@@ -1,0 +1,34 @@
+<div class="quoting_tool-tool-items">
+    <div class="quoting_tool-tool-items-main">
+        <ul class="list list--tabs list--justified m--bottom">
+            <li ng-class="{'active': section == SECTIONS.BLOCKS}">
+                <a href="" ng-click="showSection(SECTIONS.BLOCKS)">{{ 'Blocks' | translate }}</a>
+            </li>
+            <li ng-class="{'active': section == SECTIONS.WIDGETS}">
+                <a href="" ng-click="showSection(SECTIONS.WIDGETS)">{{ 'Fields' | translate }}</a>
+            </li>
+            <li ng-class="{'active': section == SECTIONS.TOKENS}">
+                <a href="" ng-click="showSection(SECTIONS.TOKENS)">{{ 'Properties' | translate }}</a>
+            </li>
+        </ul>
+
+        <div class="quoting_tool-tool-items-container" resize>
+
+            <!-- blocks sections-->
+            <div class="btn-sq-holder m--bottom" ng-if="section == SECTIONS.BLOCKS">
+                <div ng-include="'layouts/v7/modules/QuotingTool/resources/js/views/right_panel/content_blocks.html'"></div>
+            </div>
+
+            <!-- widgets section-->
+            <div class="btn-sq-holder m--bottom" ng-if="section == SECTIONS.WIDGETS">
+                <div ng-include="'layouts/v7/modules/QuotingTool/resources/js/views/right_panel/content_widgets.html'"></div>
+            </div>
+
+            <!-- tokens section -->
+            <div class="m--bottom" ng-if="section == SECTIONS.TOKENS">
+                <div ng-include="'layouts/v7/modules/QuotingTool/resources/js/views/right_panel/content_properties.html'"></div>
+            </div>
+        </div>
+        <div class="clear"></div>
+    </div>
+</div>

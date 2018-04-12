@@ -1,0 +1,29 @@
+<div class="content-container quoting_tool-draggable ui-resizable" data-aspect-ratio="1"
+     data-id="layouts/v7/modules/QuotingTool/resources/js/views/widgets/checkbox.html">
+    <div class="content-editable widget__ui">
+        <div class="quoting_tool-draggable-object">
+            <input type="checkbox" name="checkbox" value="1" input-change title="Checkbox"
+                   class="interactive_form_item"/>
+        </div>
+    </div>
+
+    <div class="quoting_tool-btn-options quoting_tool-btn-left-options">
+        <div class="doc-block__control btn--block-control quoting_tool-btn-options-item"
+             ng-show="app.data.widgets.checkbox.layout.enable_move">
+            <i class="icon-align-justify"></i>
+        </div>
+    </div>
+
+    <div class="quoting_tool-btn-options quoting_tool-btn-right-options">
+        <div class="doc-block__control btn--block-control btn--block-control-settings quoting_tool-btn-options-item"
+             ng-show="app.data.widgets.checkbox.layout.enable_setting"
+             ng-click="setting($event, app.data.widgets.checkbox)">
+            <i class="icon-cog"></i>
+        </div>
+        <div class="doc-block__control btn--block-control btn--block-control-del quoting_tool-btn-options-item"
+             ng-show="app.data.widgets.checkbox.layout.enable_remove"
+             ng-click="remove($event)">
+            <i class="icon-trash"></i>
+        </div>
+    </div>
+</div>

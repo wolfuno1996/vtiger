@@ -1,0 +1,134 @@
+/* ********************************************************************************
+ * The content of this file is subject to the Quoting Tool ("License");
+ * You may not use this file except in compliance with the License
+ * The Initial Developer of the Original Code is VTExperts.com
+ * Portions created by VTExperts.com. are Copyright(C) VTExperts.com.
+ * All Rights Reserved.
+ * ****************************************************************************** */
+
+body {
+    font-family: 'Open Sans', 'Lucida Grande', Verdana, Tahoma, Arial, sans-serif;
+    font-size: 13px;
+    line-height: 18px;
+    color: #000000;
+}
+
+#quoting_tool-body {
+    width: 100%;
+    font-family: 'Open Sans', 'Lucida Grande', Verdana, Tahoma, Arial, sans-serif !important;
+    font-size: 13px;
+    line-height: 18px;
+    color: #000000;
+}
+
+#quoting_tool-body h1,
+#quoting_tool-body h2,
+#quoting_tool-body h3,
+#quoting_tool-body h4,
+#quoting_tool-body h5,
+#quoting_tool-body h6,
+#quoting_tool-body p {
+    font-family: 'Open Sans', 'Lucida Grande', Verdana, Tahoma, Arial, sans-serif;
+    margin: 14px 0;
+}
+
+#quoting_tool-body p {
+    font-size: 13px;
+    line-height: 18px;
+}
+
+#quoting_tool-body p small {
+    font-size: 11px;
+    /*color: #999999;*/
+}
+
+#quoting_tool-body h1,
+#quoting_tool-body h2,
+#quoting_tool-body h3,
+#quoting_tool-body h4,
+#quoting_tool-body h5,
+#quoting_tool-body h6 {
+    font-weight: bold;
+    /*color: #333333;*/
+    text-rendering: optimizelegibility;
+}
+
+#quoting_tool-body h1 small,
+#quoting_tool-body h2 small,
+#quoting_tool-body h3 small,
+#quoting_tool-body h4 small,
+#quoting_tool-body h5 small,
+#quoting_tool-body h6 small {
+    font-weight: normal;
+    /*color: #999999;*/
+}
+
+#quoting_tool-body h1 {
+    font-size: 30px;
+    line-height: 36px;
+}
+
+#quoting_tool-body h1 small {
+    font-size: 18px;
+}
+
+#quoting_tool-body h2 {
+    font-size: 24px;
+    line-height: 36px;
+}
+
+#quoting_tool-body h2 small {
+    font-size: 18px;
+}
+
+#quoting_tool-body h3 {
+    line-height: 27px;
+    font-size: 18px;
+}
+
+#quoting_tool-body h3 small {
+    font-size: 14px;
+}
+
+#quoting_tool-body h4,
+#quoting_tool-body h5,
+#quoting_tool-body h6 {
+    line-height: 18px;
+}
+
+#quoting_tool-body h4 {
+    font-size: 14px;
+}
+
+#quoting_tool-body h4 small {
+    font-size: 12px;
+}
+
+#quoting_tool-body h5 {
+    font-size: 12px;
+}
+
+#quoting_tool-body h6 {
+    font-size: 11px;
+    /*color: #999999;*/
+    text-transform: uppercase;
+}
+
+.clear {
+    clear: both;
+    line-height: 0;
+}
+
+.pagebreak {
+    page-break-after: always;
+}
+
+.linebreak {
+    clear: both;
+    cursor: auto;
+}
+
+.quoting_tool-line {
+    clear: both;
+    border: 1px solid #eeeeee;
+}

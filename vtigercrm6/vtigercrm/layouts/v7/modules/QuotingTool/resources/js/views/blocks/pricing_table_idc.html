@@ -1,0 +1,73 @@
+<div class="content-container block-handle"
+     data-id="layouts/vlayout/modules/QuotingTool/resources/js/views/blocks/pricing_table_idc.html">
+    <div class="content-editable">
+        <div contenteditable="true">
+            <div class="quoting_tool-cke-keep-element" style="overflow: hidden; overflow-x: auto;">
+                <table border="1" cellspacing="0" cellpadding="6"
+                       class="quoting_tool-cke-keep-element" data-table-type="pricing_table_idc"
+                       style="width: 100%; border-collapse: collapse;">
+                    <thead title="Header">
+                    <tr style="background-color: #f4f4f4;">
+                        <th>Item Name</th>
+                        <th>List Price</th>
+                        <th>Quantity</th>
+                        <th>Total</th>
+                    </tr>
+                    </thead>
+                    <tbody title="Body">
+                    <tr>
+                        <td colspan="4">#PRODUCTBLOC_START#</td>
+                    </tr>
+                    <tr class="tbody-content">
+                        <td>$VTEItems__productid$	</td>
+                        <td style="text-align: right;">$VTEItems__listprice$</td>
+                        <td style="text-align: right;">$VTEItems__quantity$</td>
+                        <td style="text-align: right;">$VTEItems__total$</td>
+                    </tr>
+                    <tr>
+                        <td colspan="4">#PRODUCTBLOC_END#</td>
+                    </tr>
+                    </tbody>
+                    <tfoot title="Footer">
+                    <tr>
+                        <td colspan="3" style="text-align: right;">Items Total</td>
+                        <td style="text-align: right;" class="item-total">$VTEItems__subtotal$</td>
+                    </tr>
+                    <tr>
+                        <td colspan="3" style="text-align: right; font-weight: bold;">Discount</td>
+                        <td style="text-align: right;" class="item-total">$VTEItems__discount_amount$</td>
+                    </tr>
+                    <tr>
+                        <td colspan="3" style="text-align: right; font-weight: bold;">Pre Tax Total</td>
+                        <td style="text-align: right;" class="item-total">$VTEItems__pre_tax_total$</td>
+                    </tr>
+                    <tr>
+                        <td colspan="3" style="text-align: right; font-weight: bold;">Grand Total</td>
+                        <td style="text-align: right;" class="item-total">$VTEItems__total$</td>
+                    </tr>
+                    </tfoot>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <div class="quoting_tool-btn-options quoting_tool-btn-left-options">
+        <div class="doc-block__control btn--block-control doc-block__control--drag quoting_tool-btn-options-item"
+             ng-show="app.data.blocks.pricing_table_idc.layout.enable_move">
+            <i class="icon-align-justify"></i>
+        </div>
+    </div>
+
+    <div class="quoting_tool-btn-options quoting_tool-btn-right-options">
+        <div class="doc-block__control btn--block-control btn--block-control-settings quoting_tool-btn-options-item"
+             ng-show="app.data.blocks.pricing_table_idc.layout.enable_setting"
+             ng-click="setting($event, app.data.blocks.pricing_table_idc)">
+            <i class="icon-cog"></i>
+        </div>
+        <div class="doc-block__control btn--block-control btn--block-control-del quoting_tool-btn-options-item"
+             ng-show="app.data.blocks.pricing_table_idc.layout.enable_remove"
+             ng-click="remove($event)">
+            <i class="icon-trash"></i>
+        </div>
+    </div>
+</div>

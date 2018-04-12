@@ -1,0 +1,41 @@
+<div class="content-container quoting_tool-draggable ui-resizable"
+     data-id="layouts/vlayout/modules/QuotingTool/resources/js/views/widgets/signature.html">
+    <div class="content-editable widget__ui">
+        <div class="quoting_tool-draggable-object quoting_tool-widget-signature-container">
+            <div contenteditable="true">
+                <div class="quoting_tool-widget-signature-header"
+                     style="text-decoration: underline; font-weight: bold; font-size: 16px; visibility: hidden; text-align: center;">
+                    &nbsp;Date & Sign&nbsp;
+                </div>
+                <div class="quoting_tool-widget-signature-main">
+                    <img src="modules/QuotingTool/resources/images/placeholder-signature.png"
+                         title="Signature" alt="" class="quoting_tool-widget-signature-image"
+                         style="width: 110px; height: 40px;">
+                </div>
+                <div class="quoting_tool-widget-signature" title="Person name"></div>
+            </div>
+
+            <div class="clear">&nbsp;</div>
+        </div>
+    </div>
+
+    <div class="quoting_tool-btn-options quoting_tool-btn-left-options">
+        <div class="doc-block__control btn--block-control quoting_tool-btn-options-item"
+             ng-show="app.data.widgets.signature.layout.enable_move">
+            <i class="icon-align-justify"></i>
+        </div>
+    </div>
+
+    <div class="quoting_tool-btn-options quoting_tool-btn-right-options">
+        <div class="doc-block__control btn--block-control btn--block-control-settings quoting_tool-btn-options-item"
+             ng-show="app.data.widgets.signature.layout.enable_setting"
+             ng-click="setting($event, app.data.widgets.signature)">
+            <i class="icon-cog"></i>
+        </div>
+        <div class="doc-block__control btn--block-control btn--block-control-del quoting_tool-btn-options-item"
+             ng-show="app.data.widgets.signature.layout.enable_remove"
+             ng-click="remove($event)">
+            <i class="icon-trash"></i>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,29 @@
+<div class="content-container quoting_tool-draggable ui-resizable"
+     data-id="layouts/v7/modules/QuotingTool/resources/js/views/widgets/text_field.html">
+    <div class="content-editable widget__ui">
+        <div class="quoting_tool-draggable-object">
+            <input type="text" name="text_field" title="Text field" class="interactive_form_item" input-change
+                   style="background-color: rgba(255,255,255,0);">
+        </div>
+    </div>
+
+    <div class="quoting_tool-btn-options quoting_tool-btn-left-options">
+        <div class="doc-block__control btn--block-control quoting_tool-btn-options-item"
+             ng-show="app.data.widgets.text_field.layout.enable_move">
+            <i class="icon-align-justify"></i>
+        </div>
+    </div>
+
+    <div class="quoting_tool-btn-options quoting_tool-btn-right-options">
+        <div class="doc-block__control btn--block-control btn--block-control-settings quoting_tool-btn-options-item"
+             ng-show="app.data.widgets.text_field.layout.enable_setting"
+             ng-click="setting($event, app.data.widgets.text_field)">
+            <i class="icon-cog"></i>
+        </div>
+        <div class="doc-block__control btn--block-control btn--block-control-del quoting_tool-btn-options-item"
+             ng-show="app.data.widgets.text_field.layout.enable_remove"
+             ng-click="remove($event)">
+            <i class="icon-trash"></i>
+        </div>
+    </div>
+</div>

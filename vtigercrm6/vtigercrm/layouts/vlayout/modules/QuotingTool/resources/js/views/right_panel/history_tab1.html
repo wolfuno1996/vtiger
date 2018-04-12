@@ -1,0 +1,37 @@
+<div id="layout-tokensTemplate">
+    <div class="block-section"
+         ng-class="{'block-section--expanded': sectionVisible && blockSectionId == SECTIONS.HISTORY_TAB1, 'block-section__disabled': sectionDisabled}"
+         data-section-id="{{SECTIONS.HISTORY_TAB1}}">
+
+        <!-- Content -->
+        <div class="block-section__bd anim--fadein clearfix"
+             ng-class="{'block-section__bd--open': sectionVisible && blockSectionId == SECTIONS.HISTORY_TAB1}">
+
+            <div>
+                <!--History items-->
+                <div>
+                    <div class="m--bottom"></div>
+
+                    <!--<div class="doctool-subhead m&#45;&#45;bottom-sm">-->
+                        <!--History items-->
+                    <!--</div>-->
+
+                    <div id="quoting_tool-histories">
+                        <div class="m--bottom quoting_tool-history-item"
+                             ng-repeat="history in app.model.histories | orderBy:'-id'"
+                             ng-class="{'selected': model.selectedHistory == history}">
+                            <i class="fa fa-trash quoting_tool-other-item-remove"
+                               ng-click="removeHistory(history)" title="{{ 'Remove' | translate }}"></i>
+                            <a href="javascript:;" target="_blank" class="quoting_tool-other-item"
+                               title="{{ 'Restore to' | translate }} {{history.created}}"
+                                ng-click="restoreHistory(history)">#{{history.id}}) {{history.created}}</a>
+
+                            <div class="hr block-text m--none"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>

@@ -1,0 +1,115 @@
+<div id="popup_settings_text_field" class="modal-settings"
+     data-type="widgets" data-target="text_field" data-name="settings_text_field"
+     data-template="layouts/vlayout/modules/QuotingTool/resources/js/views/popups/settings_text_field.html">
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+        </button>
+        <h4 class="modal-title" id="myModalLabel">{{ 'Settings' | translate }}</h4>
+    </div>
+    <div class="modal-body">
+        <div class="form">
+            <label class="checkbox">
+                <input type="checkbox" name="editable" checked="checked" class="pull-left">
+                &nbsp;
+                <span>{{ 'Allow to edit' | translate }}</span>
+            </label>
+            <label class="checkbox">
+                <input type="checkbox" name="required" class="pull-left">
+                &nbsp;
+                <span>{{ 'Mandatory' | translate }}</span>
+            </label>
+            <div class="formatOption" style="display: none">
+                <label>
+                    <p class="font-left">{{ 'BG Color' | translate }}</p>
+                    <input type="text" class="color_picker" name="color_picker" style="float: left">
+                </label>
+                <div class="clearfix"></div>
+                <label>
+                    <p class="font-left">{{ 'Fore Color' | translate }}</p>
+                    <input type="text" class="fore_color" name="fore_color" style="float: left">
+                </label>
+                <div class="clearfix"></div>
+                <label>
+                    <p class="font-left">{{ 'Font Style' | translate }}</p>
+                    <div style="float: left">
+                        <a class="cke_button cke_button__bold cke_button_off" title="Bold" tabindex="-1" aria-haspopup="false" aria-pressed="true"
+                           style="float: none"><span class="cke_button_icon cke_button__bold_icon"
+                                                     style="background-image:url('/layouts/vlayout/modules/QuotingTool/resources/js/libs/ckeditor_4.5.6_full/plugins/icons.png?t=FB9E');background-position:0 -24px;background-size:auto;">&nbsp;</span><span
+                                class="cke_button_label cke_button__bold_label" aria-hidden="false">Bold</span></a>
+                        <a class="cke_button cke_button__italic cke_button_off" title="Italic" tabindex="-1" aria-haspopup="false" aria-pressed="true"
+                           style="float: none"><span class="cke_button_icon cke_button__italic_icon"
+                                                     style="background-image:url('/layouts/vlayout/modules/QuotingTool/resources/js/libs/ckeditor_4.5.6_full/plugins/icons.png?t=FB9E');background-position:0 -48px;background-size:auto;">&nbsp;</span><span
+                                class="cke_button_label cke_button__italic_label" aria-hidden="false">Italic</span></a>
+                        <a class="cke_button cke_button__underline cke_button_off" title="Underline" tabindex="-1" aria-haspopup="false" aria-pressed="true"
+                           style="float: none"><span class="cke_button_icon cke_button__underline_icon"
+                                                     style="background-image:url('/layouts/vlayout/modules/QuotingTool/resources/js/libs/ckeditor_4.5.6_full/plugins/icons.png?t=FB9E');background-position:0 -144px;background-size:auto;">&nbsp;</span><span
+                                class="cke_button_label cke_button__underline_label" aria-hidden="false">Underline</span></a>
+                        <a class="cke_button cke_button__justifyleft align_off" title="AlignLeft" style="float: none">
+                        <span  class="cke_button_icon cke_button__justifyleft_icon"
+                               style="background-image:url(/layouts/vlayout/modules/QuotingTool/resources/js/libs/ckeditor_4.5.6_full/plugins/icons.png?t=FB9E');background-position:0 -1128px;background-size:auto;">&nbsp;</span>
+                            <span class="cke_button_label cke_button__justifyleft_label">Align Left</span>
+                        </a>
+                        <a class="cke_button cke_button__justifycenter align_off" title="Center" style="float: none">
+                        <span class="cke_button_icon cke_button__justifycenter_icon"
+                              style="background-image:url('/layouts/vlayout/modules/QuotingTool/resources/js/libs/ckeditor_4.5.6_full/plugins/icons.png?t=FB9E');background-position:0 -1104px;background-size:auto;">&nbsp;</span>
+                            <span class="cke_button_label cke_button__justifycenter_label">Center</span></a>
+                        <a class="cke_button cke_button__justifyright align_off" title="AlignRight" style="float: none">
+                        <span
+                                class="cke_button_icon cke_button__justifyright_icon"
+                                style="background-image:url('/layouts/vlayout/modules/QuotingTool/resources/js/libs/ckeditor_4.5.6_full/plugins/icons.png?t=FB9E');background-position:0 -1152px;background-size:auto;">&nbsp;</span><span
+                                class="cke_button_label cke_button__justifyright_label">Align Right</span>
+                        </a>
+                    </div>
+
+                </label>
+                <div class="clearfix"></div>
+                <label>
+                    <p class="font-left">{{ 'Font Family' | translate }}</p>
+                    <select name="repeatSelect" class="fontFamSelect" style="width: 67%;float: left">
+                        <option value="">Font</option>
+                        <option style="font-family: arial,helvetica,sans-serif" value="arial,helvetica,sans-serif">Arial</option>
+                        <option style="font-family: comic sans ms,cursive" value="comic sans ms,cursive">Comic Sans MS</option>
+                        <option style="font-family: courier new,courier,monospace" value="courier new,courier,monospace">Courier New</option>
+                        <option style="font-family: georgia,serif" value="georgia,serif">Georgia</option>
+                        <option style="font-family: lucida sans unicode,lucida grande,sans-serif" value="lucida sans unicode,lucida grande,sans-serif">Lucida Sans Unicode</option>
+                        <option style="font-family: tahoma,geneva,sans-serif" value="tahoma,geneva,sans-serif">Tahoma</option>
+                        <option style="font-family: times new roman,times,serif" value="times new roman,times,serif">Times New Roman</option>
+                        <option style="font-family: trebuchet ms,helvetica,sans-serif" value="trebuchet ms,helvetica,sans-serif">Trebuchet MS</option>
+                        <option style="font-family: verdana,geneva,sans-serif" value="verdana,geneva,sans-serif">Verdana</option>
+                        <option style="font-family: helveticaneue" value="helveticaneue">Helvetica Neue</option>
+                        <option style="font-family: sun-exta" value="sun-exta">Sun-ExtA</option>
+                        <option style="font-family: damase" value="damase">MPH 2B Damase</option>
+                    </select>
+                </label>
+                <div class="clearfix"></div>
+                <label>
+                    <p class="font-left">{{ 'Font Size' | translate }}</p>
+                    <select name="fontSize" class="fontSizeSelect" style="float: left;width: 67%"  >
+                        <option value="">Size</option>
+                        <option value="8px" style="font-size: 8px">8</option>
+                        <option value="9px" style="font-size: 9px">9</option>
+                        <option value="10px" style="font-size: 10px">10</option>
+                        <option value="11px" style="font-size: 11px">11</option>
+                        <option value="12px" style="font-size: 12px">12</option>
+                        <option value="14px" style="font-size: 14px">14</option>
+                        <option value="16px" style="font-size: 16px">16</option>
+                        <option value="18px" style="font-size: 18px">18</option>
+                        <option value="20px" style="font-size: 20px">20</option>
+                        <option value="22px" style="font-size: 22px">22</option>
+                        <option value="24px" style="font-size: 24px">24</option>
+                        <option value="26px" style="font-size: 26px">26</option>
+                        <option value="28px" style="font-size: 28px">28</option>
+                        <option value="36px" style="font-size: 36px">36</option>
+                        <option value="48px" style="font-size: 48px">48</option>
+                        <option value="72px" style="font-size: 72px">72</option>
+                    </select>
+                </label>
+                <div class="clearfix"></div>
+            </div>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-primary btn-submit" ng-click="changeSetting($event)">{{ 'OK' | translate }}</button>
+    </div>
+</div>

@@ -1,0 +1,31 @@
+<div class="content-container quoting_tool-draggable ui-resizable"
+     data-id="layouts/v7/modules/QuotingTool/resources/js/views/widgets/datetime.html">
+    <div class="content-editable widget__ui">
+        <div class="quoting_tool-draggable-object">
+            <input type="text" name="datetimepicker" value="" title="Datetime picker" class="quoting_tool-datetimepicker"
+                   data-datetime-format="mm/dd/yyyy hh:mm" data-date-format="mm/dd/yyyy" data-time-format="hh:mm"
+                   vtiger-datetimepicker
+                   style="border-color: rgba(255,255,255,0); box-shadow: none; background-color: rgba(255,255,255,0);">
+        </div>
+    </div>
+
+    <div class="quoting_tool-btn-options quoting_tool-btn-left-options">
+        <div class="doc-block__control btn--block-control quoting_tool-btn-options-item"
+             ng-show="app.data.widgets.datetime.layout.enable_move">
+            <i class="icon-align-justify"></i>
+        </div>
+    </div>
+
+    <div class="quoting_tool-btn-options quoting_tool-btn-right-options">
+        <div class="doc-block__control btn--block-control btn--block-control-settings quoting_tool-btn-options-item"
+             ng-show="app.data.widgets.datetime.layout.enable_setting"
+             ng-click="setting($event, app.data.widgets.datetime)">
+            <i class="icon-cog"></i>
+        </div>
+        <div class="doc-block__control btn--block-control btn--block-control-del quoting_tool-btn-options-item"
+             ng-show="app.data.widgets.datetime.layout.enable_remove"
+             ng-click="remove($event)">
+            <i class="icon-trash"></i>
+        </div>
+    </div>
+</div>

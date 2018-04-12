@@ -1,0 +1,79 @@
+<?xml version='1.0'?>
+<schema>
+	<tables>
+		<table>
+			<name>vtiger_quotingtool</name>
+			<sql><![CDATA[CREATE TABLE IF NOT EXISTS `vtiger_quotingtool` (
+						  `id` int(19) NOT NULL AUTO_INCREMENT,
+						  `filename` varchar(100) NOT NULL,
+						  `module` varchar(255) NOT NULL,
+						  `body` longtext NULL,
+						  `header` text,
+						  `content` longtext,
+						  `footer` text,
+						  `anwidget` tinyint(3) DEFAULT '0',
+						  `description` text,
+						  `deleted` int(1) NOT NULL DEFAULT '0',
+						  `created` datetime NOT NULL,
+						  `updated` datetime NOT NULL,
+						  `email_subject` varchar(255) DEFAULT NULL,
+						  `email_content` text,
+						  `mapping_fields` text,
+						  `attachments` text,
+						  PRIMARY KEY (`id`)
+						) ENGINE=InnoDB  DEFAULT CHARSET=utf8;]]></sql>
+		</table>
+		<table>
+			<name>vtiger_quotingtool_transactions</name>
+			<sql><![CDATA[CREATE TABLE IF NOT EXISTS `vtiger_quotingtool_transactions` (
+						  `id` int(19) unsigned NOT NULL AUTO_INCREMENT,
+						  `template_id` int(19) unsigned NOT NULL,
+						  `module` varchar(255) NOT NULL,
+						  `record_id` int(19) unsigned NOT NULL,
+						  `signature` text,
+						  `signature_name` varchar(255) DEFAULT NULL,
+						  `full_content` longtext,
+						  `description` text,
+						  `deleted` tinyint(1) NOT NULL DEFAULT '0',
+						  `created` datetime NOT NULL,
+						  `updated` datetime NOT NULL,
+						  `status` tinyint(1) NOT NULL DEFAULT '0',
+						  PRIMARY KEY (`id`)
+						) ENGINE=InnoDB  DEFAULT CHARSET=utf8;]]></sql>
+		</table>
+		<table>
+			<name>vtiger_quotingtool_settings</name>
+			<sql><![CDATA[CREATE TABLE IF NOT EXISTS `vtiger_quotingtool_settings` (
+						  `id` int(19) unsigned NOT NULL AUTO_INCREMENT,
+						  `template_id` int(19) unsigned NOT NULL,
+						  `created` datetime NOT NULL,
+						  `updated` datetime NOT NULL,
+						  `description` text,
+						  `label_decline` varchar(255) DEFAULT NULL,
+						  `label_accept` varchar(255) DEFAULT NULL,
+						  `background` text,
+						  PRIMARY KEY (`id`)
+						) ENGINE=InnoDB  DEFAULT CHARSET=utf8;]]></sql>
+		</table>
+		<table>
+			<name>vtiger_quotingtool_histories</name>
+			<sql><![CDATA[CREATE TABLE IF NOT EXISTS `vtiger_quotingtool_histories` (
+						  `id` int(19) unsigned NOT NULL AUTO_INCREMENT COMMENT '// PK',
+						  `created` datetime NOT NULL,
+						  `updated` datetime NOT NULL,
+						  `deleted` tinyint(1) NOT NULL DEFAULT '0',
+						  `template_id` int(19) unsigned NOT NULL DEFAULT '0' COMMENT '// FK - with quotingtool table',
+						  `body` longtext,
+						  PRIMARY KEY (`id`)
+						) ENGINE=InnoDB DEFAULT CHARSET=utf8;]]></sql>
+		</table>
+		<table>
+			<name>vte_modules</name>
+			<sql><![CDATA[CREATE TABLE IF NOT EXISTS `vte_modules` (
+						  `module`  varchar(50) NOT NULL ,
+						  `valid`  int(1) NULL ,
+						  PRIMARY KEY (`module`)
+						) ENGINE=InnoDB DEFAULT CHARSET=utf8;]]></sql>
+		</table>
+	</tables>
+</schema>

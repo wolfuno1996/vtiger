@@ -1,0 +1,8 @@
+<div class="widget-handle btn btn--sq-icon quoting_tool-drag-widget-component-to-content"
+     ng-repeat="widget in app.data.widgets" ng-if="widget.layout.id != 'init'"
+     ng-click="addWidget(widget)" data-id="{{widget.layout.id}}" on-finish-render-item="ngRepeatWidgetFinished">
+    <span class="btn--sq-icon__bd" title="{{ widget.layout.name | translate }}">
+            <i class="icon icon--big icon--clear-background-image {{widget.layout.icon}}"></i>
+        <span class="btn--sq-icon__text">{{ widget.layout.name | translate }}</span>
+    </span>
+</div>

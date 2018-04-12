@@ -1,0 +1,19 @@
+<div class="quoting_tool-tool-items">
+    <div class="quoting_tool-tool-items-main">
+        <ul class="list list--tabs list--justified m--bottom">
+            <li ng-class="{'active': section == SECTIONS.HISTORIES}">
+                <a href="" ng-click="showSection(SECTIONS.HISTORIES)">{{ 'History' | translate }}</a>
+            </li>
+        </ul>
+
+        <div id="quoting_tool-tool-items-container-history" class="quoting_tool-tool-items-container" resize>
+            <div class="btn-sq-holder m--bottom" style="margin-right: 0;"
+                 ng-if="section == SECTIONS.HISTORIES">
+                <div ng-include="'layouts/v7/modules/QuotingTool/resources/js/views/right_panel/history_tab1.html'"
+                     onload="load_history()"></div>
+            </div>
+        </div>
+
+        <div class="clear"></div>
+    </div>
+</div>

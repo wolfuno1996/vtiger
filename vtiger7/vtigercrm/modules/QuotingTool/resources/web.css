@@ -1,0 +1,124 @@
+/* ********************************************************************************
+ * The content of this file is subject to the Quoting Tool ("License");
+ * You may not use this file except in compliance with the License
+ * The Initial Developer of the Original Code is VTExperts.com
+ * Portions created by VTExperts.com. are Copyright(C) VTExperts.com.
+ * All Rights Reserved.
+ * ****************************************************************************** */
+
+@font-face {
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: 400;
+    src: url('mpdf/ttfonts/OpenSans-Regular-webfont.eot');
+    src: url('mpdf/ttfonts/OpenSans-Regular-webfont.eot?#iefix') format('embedded-opentype'),
+    url('mpdf/ttfonts/OpenSans-Regular-webfont.woff') format('woff'),
+    url('mpdf/ttfonts/OpenSans-Regular-webfont.ttf') format('truetype'),
+    url('mpdf/ttfonts/OpenSans-Regular-webfont.svg#open_sansregular') format('svg');
+}
+
+.sigPad {
+    width: 500px; /* Change the width */
+}
+
+.sigWrapper {
+    height: 180px; /* Change the height */
+}
+
+.typed {
+    height: 180px;
+    line-height: 180px;
+    font-size: 72px;
+}
+
+.sigPad input {
+    width: 98%;
+}
+
+.content-container {
+    border: 1px dotted transparent;
+}
+
+input,
+textarea,
+select {
+    width: auto;
+}
+
+img {
+    max-width: none;
+}
+
+.placeholder * {
+    color: #999;
+    font-style: italic;
+}
+
+.quoting_tool-draggable-object {
+    white-space: nowrap;
+}
+
+.quoting_tool-draggable-object input,
+.quoting_tool-draggable-object select,
+.quoting_tool-draggable-object button {
+    margin: 2px;
+    vertical-align: middle;
+    box-sizing: initial;
+}
+
+.text-right {
+    text-align: right;
+}
+
+.force-clear-margin {
+    margin: 0 !important;
+}
+
+.force-clear-padding {
+    padding: 0 !important;
+}
+
+.mark-required {
+    color: red;
+    display: inline-block;
+    vertical-align: top;
+    white-space: normal;
+    width: 0;
+    height: 0;
+}
+
+button.close {
+    padding: 0;
+    cursor: pointer;
+    background: transparent;
+    border: 0;
+    -webkit-appearance: none;
+}
+
+.cke_show_borders table.cke_show_border,
+.cke_show_borders table.cke_show_border > tr > td,
+.cke_show_borders table.cke_show_border > tr > th,
+.cke_show_borders table.cke_show_border > tbody > tr > td,
+.cke_show_borders table.cke_show_border > tbody > tr > th,
+.cke_show_borders table.cke_show_border > thead > tr > td,
+.cke_show_borders table.cke_show_border > thead > tr > th,
+.cke_show_borders table.cke_show_border > tfoot > tr > td,
+.cke_show_borders table.cke_show_border > tfoot > tr > th {
+    border: 1px dotted transparent;
+}
+
+input[type="text"],
+input[type="password"],
+.ui-autocomplete-input,
+textarea,
+.uneditable-input {
+    display: inline-block;
+    padding: 4px;
+    font-size: 13px;
+    line-height: 18px;
+    color: #808080;
+    border: 1px solid #ccc;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+}

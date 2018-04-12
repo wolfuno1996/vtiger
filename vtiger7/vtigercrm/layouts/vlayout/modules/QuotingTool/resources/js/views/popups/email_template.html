@@ -1,0 +1,36 @@
+<div id="massEditContainer" class='modelContainer'>
+    <div id="massEdit">
+        <div class="modal-header contentsBackground">
+            <button type="button" class="close " data-dismiss="modal" aria-hidden="true">&times;</button>
+            <h3 id="massEditHeader">{{ 'Email Template' | translate }}</h3>
+        </div>
+        <form class="form-horizontal" action="#">
+            <div name='massEditContent' class="row-fluid">
+                <div class="modal-body">
+                    <div class="row-fluid">
+                        <div class="span12">
+                            <input type="text" class="input-large" name="tmp_email_subject"
+                                   placeholder="{{ 'Subject' | translate }}" style="width: 99%"
+                                   ng-model="app.model.email_subject"/>
+                        </div>
+                    </div>
+                    <div class="row-fluid" style="margin-top: 10px;">
+                        <div class="span12">
+                            <textarea name="tmp_email_content" placeholder="{{ 'Content in here...' | translate }}"
+                                      ng-model="app.model.email_content"
+                                      ckeditor="emailTemplateSettings"></textarea>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <div class="pull-right cancelLinkContainer">
+                    <a class="cancelLink" type="reset" data-dismiss="modal">{{ 'Cancel' | translate }}</a>
+                </div>
+                <button class="btn btn-success" type="button" name="saveButton" ng-click="saveEmailTemplate()">
+                    <strong>{{ 'Save' | translate }}</strong>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

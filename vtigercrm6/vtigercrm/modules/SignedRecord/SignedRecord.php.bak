@@ -1,0 +1,438 @@
+<?php
+/* ********************************************************************************
+ * The content of this file is subject to the Signed Record ("License");
+ * You may not use this file except in compliance with the License
+ * The Initial Developer of the Original Code is VTExperts.com
+ * Portions created by VTExperts.com. are Copyright(C) VTExperts.com.
+ * All Rights Reserved.
+ * ****************************************************************************** */
+
+include_once 'modules/Vtiger/CRMEntity.php';
+include_once 'modules/QuotingTool/QuotingTool.php';
+
+/**
+ * Class SignedRecord
+ */
+class SignedRecord extends Vtiger_CRMEntity
+{
+    var $table_name = 'vtiger_signedrecord';
+    var $table_index = 'signedrecordid';
+
+    /**
+     * Mandatory table for supporting custom fields.
+     */
+    var $customFieldTable = Array('vtiger_signedrecordcf', 'signedrecordid');
+
+    /**
+     * Mandatory for Saving, Include tables related to this module.
+     */
+    var $tab_name = Array('vtiger_crmentity', 'vtiger_signedrecord', 'vtiger_signedrecordcf');
+
+    /**
+     * Mandatory for Saving, Include tablename and tablekey columnname here.
+     */
+    var $tab_name_index = Array(
+        'vtiger_crmentity' => 'crmid',
+        'vtiger_signedrecord' => 'signedrecordid',
+        'vtiger_signedrecordcf' => 'signedrecordid');
+
+    /**
+     * Mandatory for Listing (Related listview)
+     */
+    var $list_fields = Array(
+        /* Format: Field Label => Array(tablename, columnname) */
+        // tablename should not have prefix 'vtiger_'
+        'Signed Record Number' => Array('signedrecord', 'signedrecordno'),
+        'Ticket' => Array('crmentity', 'ticketid')
+    );
+    var $list_fields_name = Array(
+        /* Format: Field Label => fieldname */
+        'Signed Record Number' => 'signedrecordno',
+        'Ticket' => 'ticketid',
+    );
+
+    // Make the field link to detail view
+    var $list_link_field = 'signedrecordno';
+
+    // For Popup listview and UI type support
+    var $search_fields = Array(
+        /* Format: Field Label => Array(tablename, columnname) */
+        // tablename should not have prefix 'vtiger_'
+        'Signed Record Number' => Array('signedrecord', 'signedrecordno'),
+        'Ticket' => Array('vtiger_crmentity', 'ticketid'),
+    );
+    var $search_fields_name = Array(
+        /* Format: Field Label => fieldname */
+        'Signed Record Number' => 'signedrecordno',
+        'Ticket' => 'ticketid',
+    );
+
+    // For Popup window record selection
+    var $popup_fields = Array('signedrecordno');
+
+    // For Alphabetical search
+    var $def_basicsearch_col = 'signedrecordno';
+
+    // Column value to use on detail view record text display
+    var $def_detailview_recname = 'signedrecordno';
+
+    // Used when enabling/disabling the mandatory fields for the module.
+    // Refers to vtiger_field.fieldname values.
+    var $mandatory_fields = Array('signedrecordno', 'ticketid');
+
+    var $default_order_by = 'signedrecordno';
+    var $default_sort_order = 'ASC';
+
+    /**
+     * Invoked when special actions are performed on the module.
+     * @param String $moduleName - Module name
+     * @param String $eventType - Event Type
+     */
+    function vtlib_handler($moduleName, $eventType)
+    {
+        if ($eventType == 'module.postinstall') {
+            // TODO Handle actions after this module is installed.
+            self::addWidgetTo($moduleName);
+            $this->updateWsEntity($moduleName);
+            $this->createDependentsList($moduleName);
+            $this->createCustomFields($moduleName);
+        } else if ($eventType == 'module.disabled') {
+            // TODO Handle actions before this module is being uninstalled.
+            self::removeWidgetTo($moduleName);
+        } else if ($eventType == 'module.enabled') {
+            // TODO Handle actions after this module is installed.
+            self::addWidgetTo($moduleName);
+            $this->convertToRelatedFields($moduleName);
+        } else if ($eventType == 'module.preuninstall') {
+            // TODO Handle actions when this module is about to be deleted.
+            self::removeWidgetTo($moduleName);
+        } else if ($eventType == 'module.preupdate') {
+            // TODO Handle actions before this module is updated.
+        } else if ($eventType == 'module.postupdate') {
+            // TODO Handle actions after this module is updated.
+            self::removeWidgetTo($moduleName);
+            self::addWidgetTo($moduleName);
+            $this->createDependentsList($moduleName);
+            $this->createCustomFields($moduleName);
+            $this->convertToRelatedFields($moduleName);
+        }
+    }
+
+    /**
+     * Fn - addWidgetTo
+     * Add header script to other module.
+     * @param $moduleName
+     */
+    static function addWidgetTo($moduleName)
+    {
+        global $adb, $vtiger_current_version;
+        if(version_compare($vtiger_current_version, '7.0.0', '<')) {
+            $template_folder= "layouts/vlayout";
+        }elsE{
+            $template_folder= "layouts/v7";
+        }
+
+        $css_widgetType = 'HEADERCSS';
+        $css_widgetName = 'SignedRecord';
+        $css_link = "$template_folder/modules/{$moduleName}/resources/{$moduleName}CSS.css";
+
+        $js_widgetType = 'HEADERSCRIPT';
+        $js_widgetName = 'SignedRecord';
+        $js_link = "$template_folder/modules/{$moduleName}/resources/{$moduleName}JS.js";
+
+        $module = Vtiger_Module::getInstance($moduleName);
+        if ($module) {
+            // css
+            $module->addLink($css_widgetType, $css_widgetName, $css_link);
+            // js
+            $module->addLink($js_widgetType, $js_widgetName, $js_link);
+        }
+
+        // Check module
+        $rs = $adb->pquery("SELECT * FROM `vtiger_ws_entity` WHERE `name` = ?", array($moduleName));
+        if ($adb->num_rows($rs) == 0) {
+            $adb->pquery("INSERT INTO `vtiger_ws_entity` (`name`, `handler_path`, `handler_class`, `ismodule`)
+            VALUES (?, 'include/Webservices/VtigerModuleOperation.php', 'VtigerModuleOperation', '1');", array($moduleName));
+        }
+    }
+
+    /**
+     * Fn - removeWidgetTo
+     * @param $moduleName
+     */
+    static function removeWidgetTo($moduleName)
+    {
+        global $adb, $vtiger_current_version;
+        if(version_compare($vtiger_current_version, '7.0.0', '<')) {
+            $template_folder= "layouts/vlayout";
+            $vtVersion='vt6';
+            $css_link_vt6 = "$template_folder/modules/{$moduleName}/resources/{$moduleName}CSS.css";
+            $js_link_vt6 = "$template_folder/modules/{$moduleName}/resources/{$moduleName}JS.js";
+        }elsE{
+            $template_folder= "layouts/v7";
+            $vtVersion='vt7';
+        }
+        $css_widgetType = 'HEADERCSS';
+        $css_widgetName = 'SignedRecord';
+        $css_link = "$template_folder/modules/{$moduleName}/resources/{$moduleName}CSS.css";
+
+        $js_widgetType = 'HEADERSCRIPT';
+        $js_widgetName = 'SignedRecord';
+        $js_link = "$template_folder/modules/{$moduleName}/resources/{$moduleName}JS.js";
+
+        $module = Vtiger_Module::getInstance($moduleName);
+        if ($module) {
+            // css
+            $module->deleteLink($css_widgetType, $css_widgetName, $css_link);
+            // js
+            $module->deleteLink($js_widgetType, $js_widgetName, $js_link);
+
+            // remove existed link on vt6 when current vt is vt7
+            if($vtVersion!='vt6'){
+                $module->deleteLink($css_widgetType, $css_widgetName, $css_link_vt6);
+                $module->deleteLink($js_widgetType, $js_widgetName, $js_link_vt6);
+            }
+        }
+
+        // Check module
+        $adb->pquery("DELETE FROM `vtiger_ws_entity` WHERE `name` = ?", array($moduleName));
+    }
+
+    /**
+     * @param string $moduleName
+     * @throws Exception
+     */
+    private function createCustomFields($moduleName)
+    {
+        $initData = array(
+            $moduleName => array(                           // module name
+                'LBL_DETAIL' => array(                      // block name
+                    'cf_signature_time' => array(           // field name
+                        'label' => 'Signature time',        // label
+                        'table' => 'vtiger_signedrecordcf', // table
+                        'uitype' => 14                      // type
+                    )
+                )
+            )
+        );
+
+        $adb = PearDatabase::getInstance();
+
+        foreach ($initData as $moduleName => $blocks) {
+            foreach ($blocks as $blockName => $fields) {
+                $module = Vtiger_Module::getInstance($moduleName);
+                $block = Vtiger_Block::getInstance($blockName, $module);
+                if (!$block && $blockName) {
+                    $block = new Vtiger_Block();
+                    $block->label = $blockName;
+                    $block->__create($module);
+                }
+                # else $block->__delete(true);
+                $currFieldSeqRs = $adb->pquery("SELECT sequence FROM `vtiger_field` WHERE block = ? ORDER BY sequence DESC LIMIT 0,1",
+                    array($block->id));
+                $sequence = $adb->query_result($currFieldSeqRs, 'sequence', 0);
+
+                foreach ($fields as $name => $field) {
+                    $existField = Vtiger_Field::getInstance($name, $module);
+                    if (!$existField && $name && $field['table']) {
+                        $sequence++;
+                        $newField = new Vtiger_Field();
+                        $newField->name = $name;
+                        $newField->label = $field['label'];
+                        $newField->table = $field['table'];
+                        $newField->uitype = $field['uitype'];
+                        if ($field['uitype'] == 15 || $field['uitype'] == 16 || $field['uitype'] == '33') {
+                            $newField->setPicklistValues($field['picklistvalues']);
+                        }
+                        $newField->sequence = $sequence;
+                        $newField->__create($block);
+                        if ($field['uitype'] == 10) {
+                            $newField->setRelatedModules(array($field["related_to_module"]));
+                        }
+                    }
+                    # else $field->__delete(true);
+                }
+            }
+        }
+    }
+
+    /**
+     * @param string $moduleName
+     */
+    private function createDependentsList($moduleName)
+    {
+        $thisModule = Vtiger_Module::getInstance($moduleName);
+        $thisModuleLabel = vtranslate($moduleName, $moduleName);
+        $funcName = 'get_dependents_list';
+        $quotingTool = new QuotingTool();
+
+        foreach ($quotingTool->enableModules as $m) {
+            $dependentModule = Vtiger_Module::getInstance($m);
+            if (!$dependentModule) {
+                continue;
+            }
+
+            // Add related list if not exist
+            if (!$this->isExistRelatedList($dependentModule->getId(), $thisModule->getId(), $funcName)) {
+                $dependentModule->setRelatedList($thisModule, $thisModuleLabel, '', $funcName);
+            }
+        }
+    }
+
+    /**
+     * @param int $tabid
+     * @param int $related_tabid
+     * @param string $name
+     * @return bool
+     */
+    private function isExistRelatedList($tabid, $related_tabid, $name)
+    {
+        global $adb;
+        $rs = $adb->pquery("SELECT COUNT(relation_id) AS total FROM `vtiger_relatedlists` WHERE `tabid` = ? AND `related_tabid` = ? AND `name` LIKE ?",
+            array($tabid, $related_tabid, $name));
+
+        if ($adb->num_rows($rs)) {
+            while ($data = $adb->fetch_array($rs)) {
+                if ($data['total'] > 0) {
+                    return true;
+                }
+
+                break;
+            }
+        }
+
+        return false;
+    }
+
+    /**
+     * @param string $moduleName
+     */
+    private function updateWsEntity($moduleName)
+    {
+        global $adb;
+        $rs = $adb->pquery("SELECT * FROM `vtiger_ws_entity` WHERE `name` = ?", array($moduleName));
+        if ($adb->num_rows($rs) == 0) {
+            $adb->pquery("INSERT INTO `vtiger_ws_entity` (`name`, `handler_path`, `handler_class`, `ismodule`)
+				VALUES (?, 'include/Webservices/VtigerModuleOperation.php', 'VtigerModuleOperation', '1');", array($moduleName));
+        }
+    }
+
+    /**
+     * @param $moduleName
+     */
+    private function convertToRelatedFields($moduleName) {
+        global $adb;
+
+        $moduleModel = Vtiger_Module_Model::getInstance($moduleName);
+        // Create new fields
+        $relatedFieldName = 'related_to';
+        // Get related_id id from vtiger_field table
+        $fieldId = 0;
+        $rs = $adb->pquery("SELECT `vtiger_field`.`fieldid` FROM `vtiger_field` WHERE `tablename` LIKE ? AND `columnname` LIKE ?",
+            array($this->table_name, $relatedFieldName));
+
+        if ($adb->num_rows($rs) == 0) {
+            $blockObject = Vtiger_Block::getInstance('LBL_DETAIL', $moduleModel);
+            $blockModel = Vtiger_Block_Model::getInstanceFromBlockObject($blockObject);
+            $fieldModel = new Vtiger_Field_Model();
+            $fieldModel->set('name', $relatedFieldName)
+                ->set('table', $this->table_name)
+                ->set('generatedtype', 1)
+                ->set('uitype', 10)
+                ->set('label', 'Related To')
+                ->set('typeofdata', 'V~O')
+                ->set('quickcreate', 1)
+                ->set('columntype', "INT(19)");
+            /** @var Vtiger_Field_Model $newField */
+            $newField = $blockModel->addField($fieldModel);
+            $fieldId = $newField->getId();
+
+        } else {
+            while ($row = $adb->fetch_array($rs)) {
+                $fieldId = $row['fieldid'];
+                break;
+            }
+        }
+
+        // Restore value from old related data
+        $resData = array();
+        $rs = $adb->pquery("SELECT sr.signedrecordid, sr.ticketid, sr.quoteid, sr.potentialid FROM `vtiger_signedrecord` as sr");
+        if ($adb->num_rows($rs)) {
+            while ($row = $adb->fetch_array($rs)) {
+                $id = $row['signedrecordid'];
+                if ($row['ticketid']) {
+                    $resData[$id] = $row['ticketid'];
+                } else if ($row['quoteid']) {
+                    $resData[$id] = $row['quoteid'];
+                } else if ($row['potentialid']) {
+                    $resData[$id] = $row['potentialid'];
+                }
+            }
+        }
+
+        // Restore data
+        foreach ($resData as $id => $value) {
+            $sql = "UPDATE vtiger_signedrecord SET related_to=? WHERE signedrecordid=?";
+            $params = array($value, $id);
+            $result = $adb->pquery($sql, $params);
+        }
+
+        // Remove old fields
+        // ticketid
+        $field_ticketid = 'ticketid';
+        $rs = $adb->pquery("SELECT `vtiger_field`.`fieldid` FROM `vtiger_field` WHERE `tablename` LIKE ? AND `columnname` LIKE ?",
+            array($this->table_name, $field_ticketid));
+
+        if ($adb->num_rows($rs)) {
+            while ($row = $adb->fetch_array($rs)) {
+                $fieldModel_ticketid = Vtiger_Field_Model::getInstance($row['fieldid'], $moduleModel);
+                $fieldModel_ticketid->delete();
+            }
+        }
+
+        // quoteid
+        $field_quoteid = 'quoteid';
+        $rs = $adb->pquery("SELECT `vtiger_field`.`fieldid` FROM `vtiger_field` WHERE `tablename` LIKE ? AND `columnname` LIKE ?",
+            array($this->table_name, $field_quoteid));
+
+        if ($adb->num_rows($rs)) {
+            while ($row = $adb->fetch_array($rs)) {
+                $fieldModel_quoteid = Vtiger_Field_Model::getInstance($row['fieldid'], $moduleModel);
+                $fieldModel_quoteid->delete();
+            }
+        }
+
+        // potentialid
+        $field_potentialid = 'potentialid';
+        $rs = $adb->pquery("SELECT `vtiger_field`.`fieldid` FROM `vtiger_field` WHERE `tablename` LIKE ? AND `columnname` LIKE ?",
+            array($this->table_name, $field_potentialid));
+
+        if ($adb->num_rows($rs)) {
+            while ($row = $adb->fetch_array($rs)) {
+                $fieldModel_potentialid = Vtiger_Field_Model::getInstance($row['fieldid'], $moduleModel);
+                $fieldModel_potentialid->delete();
+            }
+        }
+
+        $result = $adb->pquery("ALTER TABLE vtiger_signedrecord DROP COLUMN ticketid");
+        $result = $adb->pquery("ALTER TABLE vtiger_signedrecord DROP COLUMN quoteid");
+        $result = $adb->pquery("ALTER TABLE vtiger_signedrecord DROP COLUMN potentialid");
+
+        // Add relation
+        $supportedModulesList = Settings_LayoutEditor_Module_Model::getSupportedModules();
+
+        foreach ($supportedModulesList as $m) {
+            $rs = $adb->pquery("SELECT `vtiger_fieldmodulerel`.`relmodule` FROM `vtiger_fieldmodulerel` WHERE `fieldid` = ? AND `module` LIKE ? AND `relmodule` LIKE ?",
+                array($fieldId, $moduleName, $m));
+            if ($adb->num_rows($rs) == 0) {
+                $adb->pquery("INSERT INTO `vtiger_fieldmodulerel` (`fieldid`, `module`, `relmodule`) VALUES (?, ?, ?);",
+                    array($fieldId, $moduleName, $m));
+            }
+        }
+
+    }
+
+    /**
+     * @param $moduleName
+     */
+}

@@ -1,0 +1,64 @@
+<div class="modal-dialog modal-lg">
+    <div id="popup_settings_signature" class="modal-content modal-settings"
+         data-type="widgets" data-target="signature" data-name="settings_signature"
+         data-template="layouts/v7/modules/QuotingTool/resources/js/views/popups/settings_signature.html" style="width: 560px">
+        <form method="post" action="" class="sigPad" style="width: 100%">
+            <div class="modal-header">
+                <div class="clearfix">
+                    <div class="pull-right ">
+                        <button type="button" class="close" aria-label="Close" data-dismiss="modal">
+                            <span aria-hidden="true" class='fa fa-close'></span>
+                        </button>
+                    </div>
+                    <h4 class="modal-title">{{ 'Signature' | translate }}</h4>
+                </div>
+            </div>
+            <div class="modal-body">
+                <div>
+                    <table class="table no-border">
+                        <tr>
+                            <td>
+                                <input type="text" name="name" id="name" class="name" placeholder="{{ 'Print your name' | translate }}">
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td>
+                                <p class="drawItDesc">{{ 'Draw your signature' | translate }}</p>
+                            </td>
+                        </tr>
+
+                        <tr style="height: 220px">
+                            <td>
+                                <ul class="sigNav">
+                                    <li class="drawIt"><a href="#draw-it">{{ 'Draw your signature' | translate }}</a></li>
+                                    <li class="clearButton"><a href="#clear">{{ 'Clear' | translate }}</a></li>
+                                </ul>
+                                <ul class="sigNav">
+                                    <div class="sig sigWrapper">
+                                        <div class="typed"></div>
+                                        <canvas class="pad" width="500" height="180"></canvas>
+                                        <input type="hidden" name="output" class="output">
+                                    </div>
+                                </ul>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td>
+                                <label class="checkbox">
+                                    <input type="checkbox" name="replace_signature_button" checked="checked">
+                                    <span>{{ 'Replace signature button?' | translate }}</span>
+                                </label>
+                            </td>
+                        </tr>
+
+                    </table>
+                </div>
+            </div>
+            <div class="modal-footer">
+                    <button type="button" style="width: 70px; height: 40px; text-align: center; color: white" class="btn btn-success btn-submit" ng-click="changeSetting($event)">{{ 'Sign' | translate }}</button>
+            </div>
+        </form>
+    </div>
+</div>

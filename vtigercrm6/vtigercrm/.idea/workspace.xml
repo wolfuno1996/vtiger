@@ -1,0 +1,690 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="b186c7b8-2e51-4ae3-95e5-207d99fb3f6f" name="Default" comment="" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="TRACKING_ENABLED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileEditorManager">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="QuotingToolJS.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/layouts/vlayout/modules/QuotingTool/resources/QuotingToolJS.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-516">
+              <caret line="147" column="0" lean-forward="false" selection-start-line="147" selection-start-column="0" selection-end-line="147" selection-end-column="0" />
+              <folding>
+                <element signature="n#!!doc" expanded="true" />
+                <marker date="1523498628740" expanded="true" signature="19264:19271" ph="×" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="QuotingToolJS.js" pinned="true" current-in-tab="true">
+        <entry file="remoteDeploymentFS://&lt;b9e3b72e-ea59-4844-9908-d60532728c39&gt;/701-1/layouts/v7/modules/QuotingTool/resources/QuotingToolJS.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="310">
+              <caret line="373" column="51" lean-forward="false" selection-start-line="373" selection-start-column="51" selection-end-line="373" selection-end-column="51" />
+              <folding>
+                <element signature="n#!!doc" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>valid</find>
+      <find>export</find>
+      <find>formEmail</find>
+      <find>$email_field_list</find>
+      <find>globalmodal</find>
+      <find>emailtemplate</find>
+      <find>preview_and_send_email</find>
+      <find>$counter</find>
+      <find>Document Designer: PDF/Email</find>
+      <find>List</find>
+    </findStrings>
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/modules/QuotingTool/models/VTELicense.php" />
+        <option value="$PROJECT_DIR$/config.inc.php" />
+        <option value="$PROJECT_DIR$/modules/QuotingTool/QuotingTool.php" />
+        <option value="$PROJECT_DIR$/layouts/v7/modules/QuotingTool/EmailPreviewTemplate.tpl" />
+        <option value="$PROJECT_DIR$/modules/QuotingTool/actions/PDFHandler.php" />
+        <option value="$PROJECT_DIR$/layouts/vlayout/modules/QuotingTool/EmailPreviewTemplate.tpl" />
+        <option value="$PROJECT_DIR$/modules/QuotingTool/views/EmailPreviewTemplate.php" />
+        <option value="&lt;b9e3b72e-ea59-4844-9908-d60532728c39&gt;/701-1/modules/QuotingTool/models/VTELicense.php" />
+        <option value="$PROJECT_DIR$/layouts/vlayout/modules/QuotingTool/resources/QuotingToolJS.js" />
+        <option value="&lt;b9e3b72e-ea59-4844-9908-d60532728c39&gt;/701-1/layouts/v7/modules/QuotingTool/resources/QuotingToolJS.js" />
+      </list>
+    </option>
+  </component>
+  <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsGulpfileManager">
+    <detection-done>true</detection-done>
+    <sorting>DEFINITION_ORDER</sorting>
+  </component>
+  <component name="PhpDebugGeneral" listening_started="true" notify_if_session_was_finished_without_being_paused="false" />
+  <component name="PhpServers">
+    <servers>
+      <server host="vtiger6.local" id="ee9e29ed-ed11-4aca-9976-3b95d83ab173" name="vtiger6.local" />
+      <server host="vtiger7.local" id="de21a22e-8424-4ec7-b971-e8870fd2f7d2" name="vtiger7.local" use_path_mappings="true">
+        <path_mappings>
+          <mapping local-root="$PROJECT_DIR$" remote-root="C:/vTiger/vtiger7/vtigercrm" />
+        </path_mappings>
+      </server>
+    </servers>
+  </component>
+  <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" interpreter_name="PHP" />
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="673" />
+    <option name="width" value="694" />
+    <option name="height" value="735" />
+  </component>
+  <component name="ProjectView">
+    <navigator currentView="ProjectPane" proportions="" version="1">
+      <flattenPackages />
+      <showMembers />
+      <showModules />
+      <showLibraryContents />
+      <hideEmptyPackages />
+      <abbreviatePackageNames />
+      <autoscrollToSource />
+      <autoscrollFromSource />
+      <sortByType />
+      <manualOrder />
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="Scope" />
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="vtigercrm" type="b2602c69:ProjectViewProjectNode" />
+              <item name="vtigercrm" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="vtigercrm" type="b2602c69:ProjectViewProjectNode" />
+              <item name="vtigercrm" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="layouts" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="vtigercrm" type="b2602c69:ProjectViewProjectNode" />
+              <item name="vtigercrm" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="modules" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="vtigercrm" type="b2602c69:ProjectViewProjectNode" />
+              <item name="vtigercrm" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="modules" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="Vtiger" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+      <pane id="Scratches" />
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
+    <property name="WebServerToolWindowFactoryState" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../vtiger7/vtigercrm" />
+    <property name="settings.editor.selected.configurable" value="reference.webide.settings.project.settings.php" />
+    <property name="two.files.diff.last.used.folder" value="D:/repose_module/TRUNK_DEV/QuotingTool/layouts/vlayout/modules/QuotingTool" />
+    <property name="WebServerToolWindowPanel.toolwindow.show.size" value="false" />
+    <property name="WebServerToolWindowPanel.toolwindow.show.date" value="false" />
+    <property name="WebServerToolWindowPanel.toolwindow.show.permissions" value="false" />
+    <property name="WebServerToolWindowPanel.toolwindow.highlight.symlinks" value="true" />
+    <property name="WebServerToolWindowPanel.toolwindow.highlight.mappings" value="true" />
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="ShelveChangesManager" show_recycled="false">
+    <option name="remove_strategy" value="false" />
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="b186c7b8-2e51-4ae3-95e5-207d99fb3f6f" name="Default" comment="" />
+      <created>1522896146425</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1522896146425</updated>
+      <workItem from="1522896147990" duration="3829000" />
+      <workItem from="1522901000845" duration="1391000" />
+      <workItem from="1522924808981" duration="616000" />
+      <workItem from="1523347997046" duration="7501000" />
+      <workItem from="1523364518767" duration="2832000" />
+      <workItem from="1523411028186" duration="3962000" />
+      <workItem from="1523417434982" duration="3806000" />
+      <workItem from="1523497634138" duration="3896000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="27833000" />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="-8" y="-8" width="1376" height="744" extended-state="6" />
+    <layout>
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32913387" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32913387" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Remote Host" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25808823" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21838236" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Docker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.392126" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+    </layout>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <option name="time" value="35" />
+    </breakpoint-manager>
+    <watches-manager />
+  </component>
+  <component name="debuggerHistoryManager">
+    <expressions id="evaluateExpression">
+      <expression>
+        <expression-string>$multipleRecord</expression-string>
+        <language-id>PHP</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>strpos($recordId,&quot;,&quot;)</expression-string>
+        <language-id>PHP</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+    </expressions>
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/layouts/vlayout/modules/QuotingTool/resources/QuotingToolJS.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+            <marker date="1523498628740" expanded="true" signature="19264:19271" ph="×" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/layouts/vlayout/modules/QuotingTool/EmailPreviewTemplate.tpl">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="544">
+          <caret line="32" column="29" lean-forward="false" selection-start-line="32" selection-start-column="29" selection-end-line="32" selection-end-column="29" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/modules/QuotingTool/actions/PDFHandler.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="7752">
+          <caret line="456" column="0" lean-forward="false" selection-start-line="456" selection-start-column="0" selection-end-line="456" selection-end-column="0" />
+          <folding>
+            <element signature="e#17695#25378#0#PHP" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/modules/QuotingTool/views/EmailPreviewTemplate.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2465">
+          <caret line="145" column="0" lean-forward="false" selection-start-line="145" selection-start-column="0" selection-end-line="145" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/layouts/vlayout/modules/QuotingTool/resources/QuotingToolJS.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3604">
+          <caret line="218" column="39" lean-forward="false" selection-start-line="218" selection-start-column="28" selection-end-line="218" selection-end-column="39" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+            <marker date="1523498628740" expanded="true" signature="19264:19271" ph="×" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/layouts/vlayout/modules/QuotingTool/EmailPreviewTemplate.tpl">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="391">
+          <caret line="23" column="55" lean-forward="false" selection-start-line="23" selection-start-column="43" selection-end-line="23" selection-end-column="55" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/modules/QuotingTool/views/EmailPreviewTemplate.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2397">
+          <caret line="147" column="53" lean-forward="false" selection-start-line="147" selection-start-column="53" selection-end-line="147" selection-end-column="53" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/modules/QuotingTool/actions/PDFHandler.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="7701">
+          <caret line="459" column="47" lean-forward="false" selection-start-line="457" selection-start-column="8" selection-end-line="594" selection-end-column="9" />
+          <folding>
+            <element signature="e#17695#25378#0#PHP" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/layouts/vlayout/modules/QuotingTool/resources/QuotingToolJS.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3604">
+          <caret line="218" column="39" lean-forward="false" selection-start-line="218" selection-start-column="28" selection-end-line="218" selection-end-column="39" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+            <marker date="1523498628740" expanded="true" signature="19264:19271" ph="×" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/layouts/vlayout/modules/QuotingTool/EmailPreviewTemplate.tpl">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="8" column="5" lean-forward="true" selection-start-line="8" selection-start-column="5" selection-end-line="8" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/modules/QuotingTool/actions/PDFHandler.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="8466">
+          <caret line="498" column="43" lean-forward="true" selection-start-line="498" selection-start-column="43" selection-end-line="498" selection-end-column="43" />
+          <folding>
+            <element signature="e#17695#25378#0#PHP" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/modules/QuotingTool/views/EmailPreviewTemplate.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2448">
+          <caret line="144" column="0" lean-forward="false" selection-start-line="144" selection-start-column="0" selection-end-line="144" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/modules/QuotingTool/QuotingTool.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="41361">
+          <caret line="2433" column="18" lean-forward="true" selection-start-line="2433" selection-start-column="18" selection-end-line="2433" selection-end-column="18" />
+          <folding>
+            <element signature="e#95136#102502#0#PHP" expanded="false" />
+            <marker date="1523411174548" expanded="true" signature="6357:6406" ph="SELECT * FRO... vtiger_ws_entity" />
+            <marker date="1523411174548" expanded="true" signature="6496:6682" ph="INSERT INTO `vtiger_ws_entity`... " />
+            <marker date="1523411174548" expanded="true" signature="6799:6928" ph="INSERT INTO `vtiger_settings_field`... " />
+            <marker date="1523411174548" expanded="true" signature="9119:9166" ph="DELETE FROM `vtiger_ws_entity`... " />
+            <marker date="1523411174548" expanded="true" signature="9212:9262" ph="DELETE FROM vtiger_settings_field... " />
+            <marker date="1523411174548" expanded="true" signature="43474:43777" ph="..." />
+            <marker date="1523411174548" expanded="false" signature="43549:43585" ph="..." />
+            <marker date="1523411174548" expanded="true" signature="43586:43739" ph="..." />
+            <marker date="1523411174548" expanded="false" signature="43641:43659" ph="..." />
+            <marker date="1523411174548" expanded="true" signature="44247:44723" ph="..." />
+            <marker date="1523411174548" expanded="false" signature="44326:44345" ph="..." />
+            <marker date="1523411174548" expanded="true" signature="44364:44681" ph="..." />
+            <marker date="1523411174548" expanded="false" signature="44423:44441" ph="..." />
+            <marker date="1523411174548" expanded="true" signature="89232:89298" ph="SELECT * FRO... com_vtiger_workflow_tasktypes" />
+            <marker date="1523411174548" expanded="true" signature="90455:90519" ph="DELETE FROM com_vtiger_workflow_tasktypes... " />
+            <marker date="1523411174548" expanded="true" signature="90697:90751" ph="DELETE FROM com_vtiger_workflowtasks... " />
+            <marker date="1523411174548" expanded="true" signature="91869:91999" ph="INSERT INTO vtiger_crmentity... " />
+            <marker date="1523411174548" expanded="true" signature="92201:92299" ph="INSERT INTO vtiger_attachments... " />
+            <marker date="1523411174548" expanded="true" signature="92452:92499" ph="INSERT INTO vtiger_seattachmentsrel... " />
+            <marker date="1523411174548" expanded="true" signature="94276:94316" ph="DELETE FROM `vte_modules`... " />
+            <marker date="1523411174548" expanded="true" signature="94371:94430" ph="INSERT INTO `vte_modules`... " />
+            <marker date="1523411174548" expanded="true" signature="94558:94598" ph="DELETE FROM `vte_modules`... " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/layouts/v7/modules/QuotingTool/EmailPreviewTemplate.tpl">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="11" column="28" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="99" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/layouts/vlayout/modules/QuotingTool/resources/QuotingToolJS.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3706">
+          <caret line="218" column="39" lean-forward="false" selection-start-line="218" selection-start-column="28" selection-end-line="218" selection-end-column="39" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+            <marker date="1523498628740" expanded="true" signature="19264:19271" ph="×" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/modules/QuotingTool/actions/PDFHandler.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="8398">
+          <caret line="494" column="17" lean-forward="true" selection-start-line="494" selection-start-column="17" selection-end-line="494" selection-end-column="17" />
+          <folding>
+            <element signature="e#17695#25378#0#PHP" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/modules/QuotingTool/views/EmailPreviewTemplate.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2601">
+          <caret line="153" column="55" lean-forward="true" selection-start-line="153" selection-start-column="55" selection-end-line="153" selection-end-column="55" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/modules/QuotingTool/QuotingTool.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="41395">
+          <caret line="2435" column="26" lean-forward="false" selection-start-line="2435" selection-start-column="26" selection-end-line="2435" selection-end-column="26" />
+          <folding>
+            <element signature="e#95136#102502#0#PHP" expanded="false" />
+            <marker date="1523411174548" expanded="true" signature="6357:6406" ph="SELECT * FRO... vtiger_ws_entity" />
+            <marker date="1523411174548" expanded="true" signature="6496:6682" ph="INSERT INTO `vtiger_ws_entity`... " />
+            <marker date="1523411174548" expanded="true" signature="6799:6928" ph="INSERT INTO `vtiger_settings_field`... " />
+            <marker date="1523411174548" expanded="true" signature="9119:9166" ph="DELETE FROM `vtiger_ws_entity`... " />
+            <marker date="1523411174548" expanded="true" signature="9212:9262" ph="DELETE FROM vtiger_settings_field... " />
+            <marker date="1523411174548" expanded="true" signature="43474:43777" ph="..." />
+            <marker date="1523411174548" expanded="false" signature="43549:43585" ph="..." />
+            <marker date="1523411174548" expanded="true" signature="43586:43739" ph="..." />
+            <marker date="1523411174548" expanded="false" signature="43641:43659" ph="..." />
+            <marker date="1523411174548" expanded="true" signature="44247:44723" ph="..." />
+            <marker date="1523411174548" expanded="false" signature="44326:44345" ph="..." />
+            <marker date="1523411174548" expanded="true" signature="44364:44681" ph="..." />
+            <marker date="1523411174548" expanded="false" signature="44423:44441" ph="..." />
+            <marker date="1523411174548" expanded="true" signature="89232:89298" ph="SELECT * FRO... com_vtiger_workflow_tasktypes" />
+            <marker date="1523411174548" expanded="true" signature="90455:90519" ph="DELETE FROM com_vtiger_workflow_tasktypes... " />
+            <marker date="1523411174548" expanded="true" signature="90697:90751" ph="DELETE FROM com_vtiger_workflowtasks... " />
+            <marker date="1523411174548" expanded="true" signature="91869:91999" ph="INSERT INTO vtiger_crmentity... " />
+            <marker date="1523411174548" expanded="true" signature="92201:92299" ph="INSERT INTO vtiger_attachments... " />
+            <marker date="1523411174548" expanded="true" signature="92452:92499" ph="INSERT INTO vtiger_seattachmentsrel... " />
+            <marker date="1523411174548" expanded="true" signature="94276:94316" ph="DELETE FROM `vte_modules`... " />
+            <marker date="1523411174548" expanded="true" signature="94371:94430" ph="INSERT INTO `vte_modules`... " />
+            <marker date="1523411174548" expanded="true" signature="94558:94598" ph="DELETE FROM `vte_modules`... " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/layouts/vlayout/modules/QuotingTool/EmailPreviewTemplate.tpl">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="595">
+          <caret line="35" column="59" lean-forward="true" selection-start-line="35" selection-start-column="59" selection-end-line="35" selection-end-column="59" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/layouts/vlayout/modules/QuotingTool/resources/QuotingToolJS.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="816">
+          <caret line="54" column="24" lean-forward="false" selection-start-line="54" selection-start-column="24" selection-end-line="54" selection-end-column="24" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+            <marker date="1523498628740" expanded="true" signature="19264:19271" ph="×" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/modules/Vtiger/views/List.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="986">
+          <caret line="65" column="52" lean-forward="false" selection-start-line="65" selection-start-column="52" selection-end-line="65" selection-end-column="52" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config.inc.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1309">
+          <caret line="89" column="49" lean-forward="false" selection-start-line="89" selection-start-column="49" selection-end-line="89" selection-end-column="49" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/layouts/vlayout/modules/QuotingTool/resources/QuotingToolJS.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="816">
+          <caret line="54" column="24" lean-forward="false" selection-start-line="54" selection-start-column="24" selection-end-line="54" selection-end-column="24" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+            <marker date="1523498628740" expanded="true" signature="19264:19271" ph="×" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config.inc.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1513">
+          <caret line="89" column="44" lean-forward="true" selection-start-line="89" selection-start-column="44" selection-end-line="89" selection-end-column="44" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/modules/Vtiger/views/List.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="986">
+          <caret line="65" column="52" lean-forward="true" selection-start-line="65" selection-start-column="52" selection-end-line="65" selection-end-column="52" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/layouts/vlayout/modules/QuotingTool/resources/QuotingToolJS.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="816">
+          <caret line="54" column="24" lean-forward="true" selection-start-line="54" selection-start-column="24" selection-end-line="54" selection-end-column="24" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+            <marker date="1523498628740" expanded="true" signature="19264:19271" ph="×" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config.inc.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="629">
+          <caret line="49" column="35" lean-forward="false" selection-start-line="49" selection-start-column="26" selection-end-line="49" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/modules/QuotingTool/models/VTELicense.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="415">
+          <caret line="172" column="20" lean-forward="false" selection-start-line="172" selection-start-column="20" selection-end-line="172" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/layouts/vlayout/modules/SignedRecord/resources/SignedRecordJS.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="177">
+          <caret line="50" column="46" lean-forward="false" selection-start-line="50" selection-start-column="46" selection-end-line="50" selection-end-column="46" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/app.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="194">
+          <caret line="716" column="4" lean-forward="false" selection-start-line="716" selection-start-column="4" selection-end-line="716" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/modules/Vtiger/views/List.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="986">
+          <caret line="65" column="52" lean-forward="false" selection-start-line="65" selection-start-column="52" selection-end-line="65" selection-end-column="52" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config.inc.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="423">
+          <caret line="89" column="20" lean-forward="false" selection-start-line="89" selection-start-column="20" selection-end-line="89" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/modules/QuotingTool/views/List.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="184">
+          <caret line="26" column="32" lean-forward="true" selection-start-line="26" selection-start-column="32" selection-end-line="26" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/jquery.additions.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-176">
+          <caret line="10" column="4" lean-forward="false" selection-start-line="10" selection-start-column="4" selection-end-line="10" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/layouts/v7/modules/QuotingTool/EmailPreviewTemplate.tpl">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="251">
+          <caret line="33" column="24" lean-forward="false" selection-start-line="33" selection-start-column="24" selection-end-line="33" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/modules/QuotingTool/QuotingTool.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="368">
+          <caret line="2411" column="20" lean-forward="true" selection-start-line="2411" selection-start-column="20" selection-end-line="2411" selection-end-column="20" />
+          <folding>
+            <element signature="e#95136#102502#0#PHP" expanded="false" />
+            <marker date="1523411174548" expanded="true" signature="6357:6406" ph="SELECT * FRO... vtiger_ws_entity" />
+            <marker date="1523411174548" expanded="true" signature="6496:6682" ph="INSERT INTO `vtiger_ws_entity`... " />
+            <marker date="1523411174548" expanded="true" signature="6799:6928" ph="INSERT INTO `vtiger_settings_field`... " />
+            <marker date="1523411174548" expanded="true" signature="9119:9166" ph="DELETE FROM `vtiger_ws_entity`... " />
+            <marker date="1523411174548" expanded="true" signature="9212:9262" ph="DELETE FROM vtiger_settings_field... " />
+            <marker date="1523411174548" expanded="true" signature="43474:43777" ph="..." />
+            <marker date="1523411174548" expanded="false" signature="43549:43585" ph="..." />
+            <marker date="1523411174548" expanded="true" signature="43586:43739" ph="..." />
+            <marker date="1523411174548" expanded="false" signature="43641:43659" ph="..." />
+            <marker date="1523411174548" expanded="true" signature="44247:44723" ph="..." />
+            <marker date="1523411174548" expanded="false" signature="44326:44345" ph="..." />
+            <marker date="1523411174548" expanded="true" signature="44364:44681" ph="..." />
+            <marker date="1523411174548" expanded="false" signature="44423:44441" ph="..." />
+            <marker date="1523411174548" expanded="true" signature="89232:89298" ph="SELECT * FRO... com_vtiger_workflow_tasktypes" />
+            <marker date="1523411174548" expanded="true" signature="90455:90519" ph="DELETE FROM com_vtiger_workflow_tasktypes... " />
+            <marker date="1523411174548" expanded="true" signature="90697:90751" ph="DELETE FROM com_vtiger_workflowtasks... " />
+            <marker date="1523411174548" expanded="true" signature="91869:91999" ph="INSERT INTO vtiger_crmentity... " />
+            <marker date="1523411174548" expanded="true" signature="92201:92299" ph="INSERT INTO vtiger_attachments... " />
+            <marker date="1523411174548" expanded="true" signature="92452:92499" ph="INSERT INTO vtiger_seattachmentsrel... " />
+            <marker date="1523411174548" expanded="true" signature="94276:94316" ph="DELETE FROM `vte_modules`... " />
+            <marker date="1523411174548" expanded="true" signature="94371:94430" ph="INSERT INTO `vte_modules`... " />
+            <marker date="1523411174548" expanded="true" signature="94558:94598" ph="DELETE FROM `vte_modules`... " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/layouts/vlayout/modules/QuotingTool/resources/QuotingTool.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-739">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="n#!!doc" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/modules/Vtiger/views/Edit.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1218">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/layouts/vlayout/modules/QuotingTool/resources/List.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="314">
+          <caret line="259" column="20" lean-forward="false" selection-start-line="259" selection-start-column="20" selection-end-line="259" selection-end-column="20" />
+          <folding>
+            <marker date="1522896056000" expanded="true" signature="5907:5914" ph="×" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/layouts/vlayout/modules/QuotingTool/EmailPreviewTemplate.tpl">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="32" column="29" lean-forward="false" selection-start-line="32" selection-start-column="29" selection-end-line="32" selection-end-column="29" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/modules/QuotingTool/actions/PDFHandler.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="456" column="0" lean-forward="false" selection-start-line="456" selection-start-column="0" selection-end-line="456" selection-end-column="0" />
+          <folding>
+            <element signature="e#17695#25378#0#PHP" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/modules/QuotingTool/views/EmailPreviewTemplate.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="179">
+          <caret line="145" column="0" lean-forward="false" selection-start-line="145" selection-start-column="0" selection-end-line="145" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/layouts/vlayout/modules/QuotingTool/resources/QuotingToolJS.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-516">
+          <caret line="147" column="0" lean-forward="false" selection-start-line="147" selection-start-column="0" selection-end-line="147" selection-end-column="0" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+            <marker date="1523498628740" expanded="true" signature="19264:19271" ph="×" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+  </component>
+</project>

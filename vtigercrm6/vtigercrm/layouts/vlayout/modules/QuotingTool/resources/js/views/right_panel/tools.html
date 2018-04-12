@@ -1,0 +1,39 @@
+<ul class="quoting_tool-tools-draggable navpanel--light" resize="nicescroll: true;">
+    <li class="btn--navpanel btn--navpanel-green">
+        <a href="javascript:;" ng-click="saveTemplate($event)">
+            <i class="icon icon--clear-background-image icon--doc-accepted"></i>
+            <span style="color: #fff;">{{ 'Save' | translate }}</span>
+        </a>
+    </li>
+    <li class="btn--navpanel" ui-sref-active="is--active">
+        <a ui-sref="base.content">
+            <i class="icon icon--clear-background-image icon--block"></i>
+            <span>{{ 'Content' | translate }}</span>
+        </a>
+    </li>
+    <li class="btn--navpanel">
+        <input type="hidden" name=""/>
+        <a href="javascript:;" ng-click="showEmailForm($event);">
+            <i class="icon icon--clear-background-image icon--templates"></i>
+            <span>{{ 'Email' | translate }}</span>
+        </a>
+    </li>
+    <li class="btn--navpanel" ui-sref-active="is--active">
+        <a ui-sref="base.general">
+            <i class="icon icon--clear-background-image icon--doctools-more"></i>
+            <span>{{ 'General' | translate }}</span>
+        </a>
+    </li>
+    <li class="btn--navpanel" ui-sref-active="is--active">
+        <a ui-sref="base.history">
+            <i class="icon icon--clear-background-image fa fa-history force-fa"></i>
+            <span>{{ 'History' | translate }}</span>
+        </a>
+    </li>
+    <li class="btn--navpanel">
+        <a href="javascript:;" ng-click="downloadPDF($event);">
+            <i class="icon icon--clear-background-image icon--download"></i>
+            <span>{{ 'Download' | translate }}</span>
+        </a>
+    </li>
+</ul>

@@ -1,0 +1,332 @@
+<div id="layout-tokensTemplate">
+    <div class="block-section"
+         ng-class="{'block-section--expanded': sectionVisible && blockSectionId == SECTIONS.CONTENT_PROPERTIES, 'block-section__disabled': sectionDisabled}"
+         data-section-id="{{SECTIONS.CONTENT_PROPERTIES}}">
+
+        <!-- Head -->
+        <div class="block-section__hd clearfix prevent-selection">
+            <!-- Arrow -->
+            <div class="block-section__toggle" ng-click="toggleSection($event)">
+                <i class="icon icon--arrow-expand"></i>
+            </div>
+
+            <!-- Title -->
+            <h4 class="block-section__name ellipsis" ng-click="toggleSection($event)">{{ 'Properties' | translate }}</h4>
+        </div>
+
+        <!-- Content -->
+        <div class="block-section__bd anim--fadein clearfix"
+             ng-class="{'block-section__bd--open': sectionVisible && blockSectionId == SECTIONS.CONTENT_PROPERTIES}">
+
+            <div>
+                <!--Properties-->
+                <div>
+                    <div class="doctool-subhead m--bottom-sm">
+                        <span>{{ 'Module' | translate }}</span>
+                    </div>
+
+                    <div class="m--bottom">
+                        <select id="tokens_modules" class="quoting_tool-selector" select2
+                                ng-change="changeSelectedModule()"
+                                ng-model="app.data.selectedModule"
+                                ng-options="module as module.label for module in app.data.modules">
+                            <option>-- {{ 'Select' | translate }} --</option>
+                        </select>
+                    </div>
+
+                    <div class="m--bottom">
+                        <select id="tokens_modules_fields" class="quoting_tool-selector" select2
+                                ng-init="app.data.selectedModuleField = app.data.selectedModule.fields[0]"
+                                ng-model="app.data.selectedModuleField"
+                                ng-options="field as field.label group by field.block.label for field in app.data.selectedModule.fields">
+                            <option>-- {{ 'Select' | translate }} --</option>
+                        </select>
+                    </div>
+
+                    <div class="m--bottom">
+                        <button class="btn btn-primary quoting_tool-btn-insert pull-right"
+                                ng-click="insertModuleFieldToken($event)">{{ 'Insert' | translate }}</button>
+                        <div class="clearfix"></div>
+                    </div>
+                </div>
+
+                <!--Related modules-->
+                <div>
+                    <div class="doctool-subhead m--bottom-sm">
+                        <span>{{ 'Related modules' | translate }}</span>
+                    </div>
+
+                    <div class="m--bottom">
+                        <select id="tokens_related_modules" class="quoting_tool-selector" select2
+                                ng-init="app.data.selectedRelatedModule = app.data.selectedModule.related_modules[0]"
+                                ng-change="changeSelectedRelatedModule()"
+                                ng-model="app.data.selectedRelatedModule"
+                                ng-options="module as module.label for module in app.data.selectedModule.related_modules">
+                            <option>-- {{ 'Select' | translate }} --</option>
+                        </select>
+                    </div>
+
+                    <div class="m--bottom">
+                        <select id="tokens_related_modules_fields" class="quoting_tool-selector" select2
+                                ng-init="app.data.selectedRelatedModuleField = app.data.selectedRelatedModule.fields[0]"
+                                ng-model="app.data.selectedRelatedModuleField"
+                                ng-options="field as field.label group by field.block.label for field in app.data.selectedRelatedModule.fields">
+                            <option>-- {{ 'Select' | translate }} --</option>
+                        </select>
+                    </div>
+
+                    <div class="m--bottom">
+                        <button class="btn btn-primary quoting_tool-btn-insert pull-right"
+                                ng-click="insertRelatedModuleFieldToken($event)">{{ 'Insert' | translate }}</button>
+                        <div class="clearfix"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="block-section"
+         ng-class="{'block-section--expanded': sectionVisible && blockSectionId == SECTIONS.CONTENT_PRODUCT_BLOCK, 'block-section__disabled': sectionDisabled}"
+         data-section-id="{{SECTIONS.CONTENT_PRODUCT_BLOCK}}">
+
+        <!-- Head -->
+        <div class="block-section__hd clearfix prevent-selection">
+            <!-- Arrow -->
+            <div class="block-section__toggle" ng-click="toggleSection($event)">
+                <i class="icon icon--arrow-expand"></i>
+            </div>
+
+            <!-- Title -->
+            <h4 class="block-section__name ellipsis" ng-click="toggleSection($event)">{{ 'Product block' | translate }}</h4>
+        </div>
+
+        <!-- Content -->
+        <div class="block-section__bd anim--fadein clearfix"
+             ng-class="{'block-section__bd--open': sectionVisible && blockSectionId == SECTIONS.CONTENT_PRODUCT_BLOCK}">
+
+            <div>
+                <!--Product block-->
+                <div>
+                    <div class="doctool-subhead m--bottom-sm">
+                        <span>Product block</span>
+                    </div>
+
+                    <div class="m--bottom">
+                        <select id="tokens_product_blocks" class="quoting_tool-selector" select2
+                                ng-model="app.data.selectedProductBlock"
+                                ng-options="block as block.label for block in app.data.productBlocks">
+                            <option>-- {{ 'Select' | translate }} --</option>
+                        </select>
+                    </div>
+
+                    <div class="m--bottom text-right">
+                        <button class="btn btn-primary quoting_tool-btn-insert"
+                                ng-click="insertProductBlockToken($event)">{{ 'Insert' | translate }}
+                        </button>
+                    </div>
+                </div>
+
+                <!--Module-->
+                <div>
+                    <div class="doctool-subhead m--bottom-sm">
+                        <span>Fields for Module</span>
+                    </div>
+
+                    <!--ng-options for Array or Object-->
+                    <!--@see: https://docs.angularjs.org/api/ng/directive/ngOptions-->
+
+                    <div class="m--bottom">
+                        <select id="tokens_product_block_modules" class="quoting_tool-selector" select2
+                                ng-change="changeSelectedProductBlockModule()"
+                                ng-model="app.data.selectedProductBlockModule"
+                                ng-options="module as module.label for (moduleName, module) in app.data.idxProductBlockModules">
+                            <option>-- {{ 'Select' | translate }} --</option>
+                        </select>
+                    </div>
+
+                    <div class="m--bottom">
+                        <select id="tokens_product_block_modules_fields" class="quoting_tool-selector" select2
+                                ng-init="app.data.selectedProductBlockModuleField = app.data.selectedProductBlockModule.fields[0]"
+                                ng-model="app.data.selectedProductBlockModuleField"
+                                ng-options="field as field.label group by field.block.label for field in app.data.selectedProductBlockModule.fields">
+                            <option>-- {{ 'Select' | translate }} --</option>
+                        </select>
+                    </div>
+
+                    <div class="m--bottom text-right">
+                        <button class="btn btn-primary quoting_tool-btn-insert"
+                                ng-click="insertProductBlockModuleFieldToken($event)">{{ 'Insert' | translate }}
+                        </button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <div class="block-section"
+         ng-class="{'block-section--expanded': sectionVisible && blockSectionId == SECTIONS.CONTENT_RELATED_BLOCK, 'block-section__disabled': sectionDisabled}"
+         data-section-id="{{SECTIONS.CONTENT_RELATED_BLOCK}}">
+
+        <!-- Head -->
+        <div class="block-section__hd clearfix prevent-selection">
+            <!-- Arrow -->
+            <div class="block-section__toggle" ng-click="toggleSection($event)">
+                <i class="icon icon--arrow-expand"></i>
+            </div>
+
+            <!-- Title -->
+            <h4 class="block-section__name ellipsis" ng-click="toggleSection($event)">{{ 'Related block' | translate }}</h4>
+        </div>
+
+        <!-- Content -->
+        <div class="block-section__bd anim--fadein clearfix"
+             ng-class="{'block-section__bd--open': sectionVisible && blockSectionId == SECTIONS.CONTENT_RELATED_BLOCK}">
+
+            <!--Related block-->
+            <div>
+                <div>
+                    <div class="doctool-subhead m--bottom-sm">
+                        <span>Product block</span>
+                    </div>
+
+                    <div class="m--bottom">
+                        <select id="tokens_related_blocks" class="quoting_tool-selector" select2
+                                ng-model="app.data.selectedRelatedBlock"
+                                ng-options="block as block.label for block in app.data.relatedBlocks">
+                            <option>-- {{ 'Select' | translate }} --</option>
+                        </select>
+                    </div>
+
+                    <div class="m--bottom text-right">
+                        <button class="btn btn-primary quoting_tool-btn-insert"
+                                ng-click="insertRelatedBlockToken($event)">{{ 'Insert' | translate }}
+                        </button>
+                    </div>
+                </div>
+
+                <!--Module-->
+                <div>
+                    <div class="doctool-subhead m--bottom-sm">
+                        <span>Fields for Module</span>
+                    </div>
+
+                    <!--ng-options for Array or Object-->
+                    <!--@see: https://docs.angularjs.org/api/ng/directive/ngOptions-->
+
+                    <div class="m--bottom">
+                        <select id="tokens_related_block_modules" class="quoting_tool-selector" select2
+                                ng-change="changeSelectedRelatedBlockModule()"
+                                ng-model="app.data.selectedRelatedBlockModule"
+                                ng-options="module as module.label for module in app.data.selectedModule.link_modules">
+                            <option>-- {{ 'Select' | translate }} --</option>
+                        </select>
+                    </div>
+
+                    <div class="m--bottom">
+                        <select id="tokens_related_block_modules_fields" class="quoting_tool-selector" select2
+                                ng-model="app.data.selectedRelatedBlockModuleField"
+                                ng-options="field as field.label group by field.block.label for field in app.data.selectedRelatedBlockModule.fields">
+                            <option>-- {{ 'Select' | translate }} --</option>
+                        </select>
+                    </div>
+
+                    <div class="m--bottom text-right">
+                        <button class="btn btn-primary quoting_tool-btn-insert"
+                                ng-click="insertRelatedBlockModuleFieldToken($event)">{{ 'Insert' | translate }}
+                        </button>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+    <div class="block-section"
+         ng-class="{'block-section--expanded': sectionVisible && blockSectionId == SECTIONS.CONTENT_OTHERS, 'block-section__disabled': sectionDisabled}"
+         data-section-id="{{SECTIONS.CONTENT_OTHERS}}">
+
+        <!-- Head -->
+        <div class="block-section__hd clearfix prevent-selection">
+            <!-- Arrow -->
+            <div class="block-section__toggle" ng-click="toggleSection($event)">
+                <i class="icon icon--arrow-expand"></i>
+            </div>
+
+            <!-- Title -->
+            <h4 class="block-section__name ellipsis" ng-click="toggleSection($event)">{{ 'Other information' | translate }}</h4>
+        </div>
+
+        <!-- Content -->
+        <div class="block-section__bd anim--fadein clearfix"
+             ng-class="{'block-section__bd--open': sectionVisible && blockSectionId == SECTIONS.CONTENT_OTHERS}">
+
+            <div>
+                <!--Custom functions-->
+                <div>
+                    <div class="doctool-subhead m--bottom-sm">
+                        <span>Custom functions</span>
+                    </div>
+
+                    <div class="m--bottom">
+                        <select id="custom_functions" class="quoting_tool-selector" select2
+                                ng-model="app.data.selectedCustomFunction"
+                                ng-options="custom_function as custom_function.label for custom_function in app.data.customFunctions">
+                            <option>-- {{ 'Select' | translate }} --</option>
+                        </select>
+                    </div>
+
+                    <div class="m--bottom text-right">
+                        <button class="btn btn-primary quoting_tool-btn-insert"
+                                ng-disabled="app.data.customFunctions.length == 0"
+                                ng-click="insertCustomFunctionToken($event)">{{ 'Insert' | translate }}
+                        </button>
+                    </div>
+                </div>
+
+                <!--Custom fields-->
+                <div>
+                    <div class="doctool-subhead m--bottom-sm">
+                        <span>Custom fields</span>
+                    </div>
+
+                    <div class="m--bottom">
+                        <select id="custom_fields" class="quoting_tool-selector" select2
+                                ng-model="app.data.selectedCustomField"
+                                ng-options="custom_field as custom_field.label for custom_field in app.data.customFields">
+                            <option>-- {{ 'Select' | translate }} --</option>
+                        </select>
+                    </div>
+
+                    <div class="m--bottom text-right">
+                        <button class="btn btn-primary quoting_tool-btn-insert"
+                                ng-click="insertCustomFieldToken($event)">{{ 'Insert' | translate }}
+                        </button>
+                    </div>
+                </div>
+
+                <!--Company information-->
+                <div>
+                    <div class="doctool-subhead m--bottom-sm">
+                        <span>Company information</span>
+                    </div>
+
+                    <div class="m--bottom">
+                        <select id="company_info" class="quoting_tool-selector" select2
+                                ng-model="app.data.selectedCompanyField"
+                                ng-options="company_field as company_field.label for company_field in app.data.companyFields">
+                            <option>-- {{ 'Select' | translate }} --</option>
+                        </select>
+                    </div>
+
+                    <div class="m--bottom text-right">
+                        <button class="btn btn-primary quoting_tool-btn-insert"
+                                ng-click="insertCompanyFieldToken($event)">{{ 'Insert' | translate }}
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>

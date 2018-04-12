@@ -1,0 +1,30 @@
+<div class="content-container quoting_tool-draggable ui-resizable"
+     data-id="layouts/v7/modules/QuotingTool/resources/js/views/widgets/initials.html">
+    <div class="content-editable widget__ui">
+        <div class="quoting_tool-draggable-object">
+            <input type="text" name="initials" title="Initials" maxlength="5"
+                   class="interactive_form_item quoting_tool-cke-keep-element quoting_tool-widget-initials" input-change
+                   style="background-color: rgba(255,255,255,0); width: 48px; text-align: right">
+        </div>
+    </div>
+
+    <div class="quoting_tool-btn-options quoting_tool-btn-left-options">
+        <div class="doc-block__control btn--block-control quoting_tool-btn-options-item"
+             ng-show="app.data.widgets.initials.layout.enable_move">
+            <i class="icon-align-justify"></i>
+        </div>
+    </div>
+
+    <div class="quoting_tool-btn-options quoting_tool-btn-right-options">
+        <div class="doc-block__control btn--block-control btn--block-control-settings quoting_tool-btn-options-item"
+             ng-show="app.data.widgets.initials.layout.enable_setting"
+             ng-click="setting($event, app.data.widgets.initials)">
+            <i class="icon-cog"></i>
+        </div>
+        <div class="doc-block__control btn--block-control btn--block-control-del quoting_tool-btn-options-item"
+             ng-show="app.data.widgets.initials.layout.enable_remove"
+             ng-click="remove($event)">
+            <i class="icon-trash"></i>
+        </div>
+    </div>
+</div>

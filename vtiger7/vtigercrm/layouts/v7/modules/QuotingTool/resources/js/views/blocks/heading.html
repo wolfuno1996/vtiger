@@ -1,0 +1,28 @@
+<div class="content-container block-handle"
+     data-id="layouts/v7/modules/QuotingTool/resources/js/views/blocks/heading.html">
+    <div class="content-editable">
+        <div contenteditable="true" placeholder="Type your heading here...">
+            <h1 class="quoting_tool-cke-keep-element" data-info='{"indexing": true}'><br/></h1>
+        </div>
+    </div>
+
+    <div class="quoting_tool-btn-options quoting_tool-btn-left-options">
+        <div class="doc-block__control btn--block-control doc-block__control--drag quoting_tool-btn-options-item"
+             ng-show="app.data.blocks.heading.layout.enable_move">
+            <i class="icon-align-justify"></i>
+        </div>
+    </div>
+
+    <div class="quoting_tool-btn-options quoting_tool-btn-right-options">
+        <div class="doc-block__control btn--block-control btn--block-control-settings quoting_tool-btn-options-item"
+             ng-show="app.data.blocks.heading.layout.enable_setting"
+             ng-click="setting($event, app.data.blocks.heading)">
+            <i class="icon-cog"></i>
+        </div>
+        <div class="doc-block__control btn--block-control btn--block-control-del quoting_tool-btn-options-item"
+             ng-show="app.data.blocks.heading.layout.enable_remove"
+             ng-click="remove($event)">
+            <i class="icon-trash"></i>
+        </div>
+    </div>
+</div>

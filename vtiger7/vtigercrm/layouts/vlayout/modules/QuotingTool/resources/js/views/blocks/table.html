@@ -1,0 +1,45 @@
+<div class="content-container block-handle"
+     data-id="layouts/vlayout/modules/QuotingTool/resources/js/views/blocks/table.html">
+    <div class="content-editable">
+        <div contenteditable="true">
+            <div class="quoting_tool-cke-keep-element">
+                <table border="1" cellspacing="0" cellpadding="6"
+                       class="quoting_tool-cke-keep-element"
+                       style="width: 100%; border-collapse: collapse;">
+                    <thead>
+                    <tr style="background-color: #f4f4f4;">
+                        <th class="quoting_tool-first-focus"><br></th>
+                        <th><br></th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td><br></td>
+                        <td><br></td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <div class="quoting_tool-btn-options quoting_tool-btn-left-options">
+        <div class="doc-block__control btn--block-control doc-block__control--drag quoting_tool-btn-options-item"
+             ng-show="app.data.blocks.table.layout.enable_move">
+            <i class="icon-align-justify"></i>
+        </div>
+    </div>
+
+    <div class="quoting_tool-btn-options quoting_tool-btn-right-options">
+        <div class="doc-block__control btn--block-control btn--block-control-settings quoting_tool-btn-options-item"
+             ng-show="app.data.blocks.table.layout.enable_setting"
+             ng-click="setting($event, app.data.blocks.table)">
+            <i class="icon-cog"></i>
+        </div>
+        <div class="doc-block__control btn--block-control btn--block-control-del quoting_tool-btn-options-item"
+             ng-show="app.data.blocks.table.layout.enable_remove"
+             ng-click="remove($event)">
+            <i class="icon-trash"></i>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,58 @@
+/* ********************************************************************************
+ * The content of this file is subject to the Quoting Tool ("License");
+ * You may not use this file except in compliance with the License
+ * The Initial Developer of the Original Code is VTExperts.com
+ * Portions created by VTExperts.com. are Copyright(C) VTExperts.com.
+ * All Rights Reserved.
+ * ****************************************************************************** */
+
+/* Include on link table */
+.vicon-quotingtool:before {
+    content: "\e61a";
+}
+table#tableQuotingToolWidget {
+    table-layout: fixed;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+table#tableQuotingToolWidget thead tr {
+    border-bottom: 1px solid;
+}
+
+table#tableQuotingToolWidget td {
+    padding: 10px;
+}
+
+table#tableQuotingToolWidget tbody tr:not(:last-child) {
+    border-bottom: 1px solid #eee;
+}
+
+table#tableQuotingToolWidget .actions {
+    text-align: center;
+    width: 50px;
+}
+
+#modalQuotingToolWidget .modal-body {
+    max-height: 450px;
+    overflow: hidden;
+    overflow-y: auto;
+}
+
+.custom_proposal_link {
+    text-decoration: underline;
+}
+
+#quotingtool_emailtemplate .modal-body {
+    max-height: 450px;
+    overflow: hidden;
+    overflow-y: auto;
+}
+
+.check_attach_file {
+    font-weight: bold;
+}
+
+.check_attach_file a {
+    text-decoration: none;
+}

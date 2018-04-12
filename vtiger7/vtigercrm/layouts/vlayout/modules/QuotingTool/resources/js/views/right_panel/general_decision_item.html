@@ -1,0 +1,28 @@
+<div class="m--bottom general_accept_decline_picklist"
+     data-selected-field="" data-selected-value="" data-type="0">
+    <label style="font-weight: bold;">{{ 'Field' | translate }}:</label>
+    <select class="quoting_tool-selector quoting_tool-selector-picklist-field" select2
+            ng-change="changeSelectedPicklistField()"
+            ng-model="picklistField.selectedField"
+            ng-options="field as field.label for field in app.data.picklistField.options">
+    </select>
+
+    <div class="clearfix"></div>
+
+    <label>{{ 'Value' | translate }}:</label>
+    <select class="quoting_tool-selector quoting_tool-selector-picklist-value" select2
+            ng-change="changeSelectedPicklistValue()"
+            ng-model="picklistField.selectedValue"
+            ng-options="key as value for (key, value) in picklistField.selectedField.values">
+    </select>
+
+    <div class="clearfix">
+        <br>
+        <button class="btn btn-danger pull-right"
+                ng-click="removeFieldTokenMapping($event)">{{ 'Remove' | translate }}
+        </button>
+        <div class="clearfix"></div>
+    </div>
+
+    <div class="hr block-text m--none"></div>
+</div>

@@ -1,0 +1,260 @@
+<style>
+    .quoting_tool-tool-items-main .tooltip-inner{
+        text-align: left;
+    }
+</style>
+<div id="layout-tokensTemplate">
+    <div class="block-section quoting_tool-block-section-container"
+         ng-class="{'block-section--expanded': sectionVisible && blockSectionId == SECTIONS.GENERAL_ACCEPT, 'block-section__disabled': sectionDisabled}"
+         data-section-id="{{SECTIONS.GENERAL_ACCEPT}}">
+
+        <!-- Head -->
+        <div class="block-section__hd clearfix prevent-selection" style="position: relative; cursor: default;">
+            <!-- Arrow -->
+            <div class="block-section__toggle" ng-click="toggleSection($event)">
+                <i class="icon icon--arrow-expand"></i>
+            </div>
+
+            <!-- Title -->
+            <h4 class="block-section__name pull-left ellipsis quoting_tool-allow-change-label"
+                contenteditable="false"
+                ng-click="toggleSection($event)">
+                {{app.model.settings.label_accept}}
+            </h4>
+
+            <!--Change label-->
+            <div title="{{ 'Change label' | translate }}" class="quoting_tool-pencil-change-label"
+                 ng-click="changeAcceptDeclineLabel($event, 'label_accept')">
+                <i class="fa fa-pencil"></i>
+            </div>
+        </div>
+
+        <!-- Content -->
+        <div class="block-section__bd anim--fadein clearfix"
+             ng-class="{'block-section__bd--open': sectionVisible && blockSectionId == SECTIONS.GENERAL_ACCEPT}">
+
+            <div>
+                <!--Accept-->
+                <div>
+                    <div class="doctool-subhead m--bottom-sm">
+                        <span>{{app.data.selectedModule.label}}:</span>
+                        <span>[{{ 'Field' | translate }}] - [{{ 'Value' | translate }}]</span>
+                    </div>
+
+                    <div id="quoting_tool-accept-fields" class="quoting_tool-accept-decline-fields"></div>
+
+                    <div class="m--bottom">
+                        <button class="btn btn-primary"
+                                ng-click="addFieldTokenMapping($event)">{{ 'Add' | translate }}
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="block-section quoting_tool-block-section-container"
+         ng-class="{'block-section--expanded': sectionVisible && blockSectionId == SECTIONS.GENERAL_DECLINE, 'block-section__disabled': sectionDisabled}"
+         data-section-id="{{SECTIONS.GENERAL_DECLINE}}">
+
+        <!-- Head -->
+        <div class="block-section__hd clearfix prevent-selection">
+            <!-- Arrow -->
+            <div class="block-section__toggle" ng-click="toggleSection($event)">
+                <i class="icon icon--arrow-expand"></i>
+            </div>
+
+            <!-- Title -->
+            <h4 class="block-section__name pull-left ellipsis quoting_tool-allow-change-label"
+                contenteditable="false"
+                ng-click="toggleSection($event)">
+                {{app.model.settings.label_decline}}
+            </h4>
+
+            <!--Change label-->
+            <div title="{{ 'Change label' | translate }}" class="quoting_tool-pencil-change-label"
+                 ng-click="changeAcceptDeclineLabel($event, 'label_decline')">
+                <i class="fa fa-pencil"></i>
+            </div>
+        </div>
+
+        <!-- Content -->
+        <div class="block-section__bd anim--fadein clearfix"
+             ng-class="{'block-section__bd--open': sectionVisible && blockSectionId == SECTIONS.GENERAL_DECLINE}">
+
+            <div>
+                <!--Decline-->
+                <div>
+                    <div class="doctool-subhead m--bottom-sm">
+                        <span>{{app.data.selectedModule.label}}:</span>
+                        <span>[{{ 'Field' | translate }}] - [{{ 'Value' | translate }}]</span>
+                    </div>
+
+                    <div id="quoting_tool-decline-fields" class="quoting_tool-accept-decline-fields"></div>
+
+                    <div class="m--bottom">
+                        <button class="btn btn-primary"
+                                ng-click="addFieldTokenMapping($event)">{{ 'Add' | translate }}
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="block-section quoting_tool-block-section-container"
+         ng-class="{'block-section--expanded': sectionVisible && blockSectionId == SECTIONS.GENERAL_OTHERS, 'block-section__disabled': sectionDisabled}"
+         data-section-id="{{SECTIONS.GENERAL_OTHERS}}">
+
+        <!-- Head -->
+        <div class="block-section__hd clearfix prevent-selection">
+            <!-- Arrow -->
+            <div class="block-section__toggle" ng-click="toggleSection($event)">
+                <i class="icon icon--arrow-expand"></i>
+            </div>
+
+            <!-- Title -->
+            <h4 class="block-section__name ellipsis" ng-click="toggleSection($event)">{{ 'Others' | translate }}</h4>
+        </div>
+
+        <!-- Content -->
+        <div class="block-section__bd anim--fadein clearfix"
+             ng-class="{'block-section__bd--open': sectionVisible && blockSectionId == SECTIONS.GENERAL_OTHERS}">
+
+            <div>
+                <!--Description-->
+                <div>
+                    <div class="doctool-subhead m--bottom-sm">
+                        {{ 'Notes' | translate }}
+                    </div>
+
+                    <div id="quoting_tool-notes-field">
+                        <textarea name="tmp_description" rows="6" maxlength="255" placeholder="{{ 'Note in here...' | translate }}"
+                                  class="quoting_tool-description"
+                                  ng-model="app.model.description"></textarea>
+                    </div>
+                </div>
+
+                <!--Attachments-->
+                <div>
+                    <div class="m--bottom"></div>
+
+                    <div class="doctool-subhead m--bottom-sm">
+                        {{ 'Attachments' | translate }}
+                    </div>
+
+                    <div id="quoting_tool-attachments-fields" class="quoting_tool-accept-decline-fields">
+                        <div class="m--bottom general_accept_decline_attachment"
+                             ng-repeat="attachment in app.model.attachments">
+                            <i class="fa fa-trash quoting_tool-other-item-remove"
+                               ng-click="removeAttachment(attachment)"></i>
+                            <a href="{{attachment.full_path}}" target="_blank" class="quoting_tool-other-item">{{attachment.name}}</a>
+
+                            <div class="hr block-text m--none"></div>
+                        </div>
+                    </div>
+
+                    <div class="m--bottom">
+                        <button class="btn btn-primary"
+                                ng-click="addAttachment($event)">{{ 'Add' | translate }}
+                        </button>
+                    </div>
+                </div>
+                <!--Expire in Days-->
+                <div>
+                    <div class="doctool-subhead m--bottom-sm">
+                        <span>{{ 'Expire in Days' | translate }}</span>
+                    </div>
+
+                    <div class="m--bottom">
+                        <input type="number" min="0"  style="width: 96%"  name="tmp_expireindays"
+                               class="quoting_tool-expire_in_days text-right"
+                               ng-model="app.model.settings.expire_in_days">
+                        </select>
+                    </div>
+                </div>
+                <!--Status template-->
+                <div>
+                    <div class="doctool-subhead m--bottom-sm">
+                        <span>{{ 'Status' | translate }}</span>
+                    </div>
+
+                    <div class="m--bottom">
+                        <select name="is_active" select2 ng-model="app.model.is_active" style="width: 250px">
+                            <option value="1">Active</option>
+                            <option value="0">Inactive</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="block-section quoting_tool-block-section-container"
+         ng-class="{'block-section--expanded': sectionVisible && blockSectionId == SECTIONS.GENERAL_ANWIDGET, 'block-section__disabled': sectionDisabled}"
+         data-section-id="{{SECTIONS.GENERAL_ANWIDGET}}">
+
+        <!-- Head -->
+        <div class="block-section__hd clearfix prevent-selection">
+            <!-- Arrow -->
+            <div class="block-section__toggle" ng-click="toggleSection($event)">
+                <i class="icon icon--arrow-expand"></i>
+            </div>
+
+            <!-- Title -->
+            <h4 class="block-section__name ellipsis" ng-click="toggleSection($event)">{{ 'Auth.net Integration' | translate }}</h4>
+        </div>
+
+        <!-- Content -->
+        <div class="block-section__bd anim--fadein clearfix"
+             ng-class="{'block-section__bd--open': sectionVisible && blockSectionId == SECTIONS.GENERAL_ANWIDGET}">
+
+            <div>
+                <!--AN Widget-->
+                <div>
+                    <div id="quoting_tool-anwidget-field">
+                        <input type="checkbox" name="tmp_anwidget" class="quoting_tool-anwidget" ng-model="app.model.anwidget">{{ 'Pay Online Widget' | translate }}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="block-section quoting_tool-block-section-container"
+         ng-class="{'block-section--expanded': sectionVisible && blockSectionId == SECTIONS.GENERAL_CREATENEWRECORDS, 'block-section__disabled': sectionDisabled}"
+         data-section-id="{{SECTIONS.GENERAL_CREATENEWRECORDS}}">
+
+        <!-- Head -->
+        <div class="block-section__hd clearfix prevent-selection">
+            <!-- Arrow -->
+            <div class="block-section__toggle" ng-click="toggleSection($event)">
+                <i class="icon icon--arrow-expand"></i>
+            </div>
+
+            <!-- Title -->
+            <h4 class="block-section__name ellipsis" ng-click="toggleSection($event)" >{{ 'Form Details' | translate }}</h4>
+            <a data-toggle="tooltip" style="top: 12px; right: 130px" data-placement="top" title="{{ 'You can send forms to external people as well as existing customers. Filled out forms will be created as new records. Please refer to the user guide for instructions' | translate }}" class="quoting_tool-pencil-change-label">
+                <i class="glyphicon glyphicon-info-sign"></i>
+            </a>
+        </div>
+
+        <!-- Content -->
+        <div class="block-section__bd anim--fadein clearfix"
+             ng-class="{'block-section__bd--open': sectionVisible && blockSectionId == SECTIONS.GENERAL_CREATENEWRECORDS}">
+            <div>
+                <!--AN Widget-->
+                <div>
+                    <div id="quoting_tool-createnewrecords-field">
+                        <input type="checkbox" name="tmp_createnewrecords" class="quoting_tool-createnewrecords" ng-model="app.model.createnewrecords"> {{ 'Create New Record' | translate }}
+                    </div>
+                </div>
+            </div>
+            <input type="text" id="link-proposal" name="tmp_linkproposal" class="quoting_tool-linkproposal" ng-model="app.model.linkproposal" style="width: 100%" readonly="readonly" value="1111">
+        </div>
+    </div>
+</div>
+<script>
+    $(function () {
+        $('[data-toggle="tooltip"]').tooltip()
+    })
+</script>

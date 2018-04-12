@@ -1,0 +1,55 @@
+<!-- Modal -->
+<div class="modal fade" id="modalFieldTable" role="dialog">
+    <div class="modal-dialog" style="width: 300px">
+        <!-- Modal content-->
+        <div class="modal-content">
+            <form class="form-horizontal" action="#">
+                <div class="modal-header">
+                    <div class="clearfix">
+                        <div class="pull-right ">
+                            <button type="button" class="close"  data-number="2">
+                                <span aria-hidden="true" class='fa fa-close'></span>
+                            </button>
+                        </div>
+                        <h4 class="modal-title">{{ 'Settings' | translate }}</h4>
+                    </div>
+                </div>
+                <div class="modal-body">
+                    <div class="form">
+                        <div>
+                            <table class="table no-border">
+                                <tr>
+                                    <td>
+                                        <label class="checkbox">
+                                            <input type="checkbox" name="editable" checked="checked"
+                                                   class="pull-left checkbox-popup">
+                                            &nbsp;
+                                            <span>{{ 'Allow to edit' | translate }}</span>
+                                        </label>
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td>
+                                        <label class="checkbox">
+                                            <input type="checkbox" name="required" class="pull-left checkbox-popup">
+                                            &nbsp;
+                                            <span>{{ 'Mandatory' | translate }}</span>
+                                        </label>
+                                    </td>
+                                </tr>
+
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <center>
+                        <button type="button" class="btn btn-primary btn-submit">{{ 'OK' | translate }}</button>
+                    </center>
+                </div>
+            </form>
+        </div>
+
+    </div>
+</div>

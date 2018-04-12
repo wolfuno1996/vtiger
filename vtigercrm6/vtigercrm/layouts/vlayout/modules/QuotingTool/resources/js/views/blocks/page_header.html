@@ -1,0 +1,30 @@
+<div class="content-container"
+     data-id="layouts/vlayout/modules/QuotingTool/resources/js/views/blocks/page_header.html">
+    <div class="content-editable">
+        <div contenteditable="true" placeholder="Type your header here...">
+            <div><br/></div>
+        </div>
+
+        <div class="quoting_tool-line"></div>
+    </div>
+
+    <div class="quoting_tool-btn-options quoting_tool-btn-left-options">
+        <div class="doc-block__control btn--block-control doc-block__control--drag quoting_tool-btn-options-item"
+             ng-show="app.data.blocks.page_header.layout.enable_move">
+            <i class="icon-align-justify"></i>
+        </div>
+    </div>
+
+    <div class="quoting_tool-btn-options quoting_tool-btn-right-options">
+        <div class="doc-block__control btn--block-control btn--block-control-settings quoting_tool-btn-options-item"
+             ng-show="app.data.blocks.page_header.layout.enable_setting"
+             ng-click="setting($event, app.data.blocks.page_header)">
+            <i class="icon-cog"></i>
+        </div>
+        <div class="doc-block__control btn--block-control btn--block-control-del quoting_tool-btn-options-item"
+             ng-show="app.data.blocks.page_header.layout.enable_remove"
+             ng-click="remove($event)">
+            <i class="icon-trash"></i>
+        </div>
+    </div>
+</div>

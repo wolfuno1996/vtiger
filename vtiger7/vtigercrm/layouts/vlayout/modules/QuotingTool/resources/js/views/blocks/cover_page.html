@@ -1,0 +1,235 @@
+<div class="document__block-list quoting_tool-content quoting_tool-cover-page"
+     data-id="layouts/vlayout/modules/QuotingTool/resources/js/views/blocks/cover_page.html"
+     data-page="1" data-page-name="cover_page">
+
+    <div class="quoting_tool-btn-options quoting_tool-btn-right-options quoting_tool-cover_page-options">
+        <div class="doc-block__control btn--block-control btn--block-control-del quoting_tool-btn-options-item"
+             ng-click="removeCoverPage($event)">
+            <i class="icon-trash quoting_tool-icon-remove-page"></i>
+        </div>
+    </div>
+
+    <div class="quoting_tool-content-header doc-block doc-block--header"></div>
+
+    <div class="quoting_tool-content-main document__block-list">
+        <div class="content-container block-handle"
+             data-id="layouts/vlayout/modules/QuotingTool/resources/js/views/blocks/line_break.html">
+            <div class="content-editable">
+                <div class="linebreak">&nbsp;</div>
+            </div>
+
+            <div class="quoting_tool-btn-options quoting_tool-btn-left-options">
+                <div class="doc-block__control btn--block-control doc-block__control--drag quoting_tool-btn-options-item"
+                     ng-show="app.data.blocks.line_break.layout.enable_move">
+                    <i class="icon-align-justify"></i>
+                </div>
+            </div>
+
+            <div class="quoting_tool-btn-options quoting_tool-btn-right-options">
+                <div class="doc-block__control btn--block-control btn--block-control-settings quoting_tool-btn-options-item"
+                     ng-show="app.data.blocks.line_break.layout.enable_setting"
+                     ng-click="setting($event, app.data.blocks.line_break)">
+                    <i class="icon-cog"></i>
+                </div>
+                <div class="doc-block__control btn--block-control btn--block-control-del quoting_tool-btn-options-item"
+                     ng-show="app.data.blocks.image.layout.enable_remove"
+                     ng-click="remove($event)">
+                    <i class="icon-trash"></i>
+                </div>
+            </div>
+        </div>
+
+        <div class="content-container block-handle"
+             data-id="layouts/vlayout/modules/QuotingTool/resources/js/views/blocks/line_break.html">
+            <div class="content-editable">
+                <div class="linebreak">&nbsp;</div>
+            </div>
+
+            <div class="quoting_tool-btn-options quoting_tool-btn-left-options">
+                <div class="doc-block__control btn--block-control doc-block__control--drag quoting_tool-btn-options-item"
+                     ng-show="app.data.blocks.line_break.layout.enable_move">
+                    <i class="icon-align-justify"></i>
+                </div>
+            </div>
+
+            <div class="quoting_tool-btn-options quoting_tool-btn-right-options">
+                <div class="doc-block__control btn--block-control btn--block-control-settings quoting_tool-btn-options-item"
+                     ng-show="app.data.blocks.line_break.layout.enable_setting"
+                     ng-click="setting($event, app.data.blocks.line_break)">
+                    <i class="icon-cog"></i>
+                </div>
+                <div class="doc-block__control btn--block-control btn--block-control-del quoting_tool-btn-options-item"
+                     ng-show="app.data.blocks.image.layout.enable_remove"
+                     ng-click="remove($event)">
+                    <i class="icon-trash"></i>
+                </div>
+            </div>
+        </div>
+
+        <div class="content-container block-handle"
+             data-id="layouts/vlayout/modules/QuotingTool/resources/js/views/blocks/image.html">
+            <div class="content-editable">
+                <div contenteditable="true" class="quoting_tool-disable-margin">
+                    <p class="quoting_tool-cke-keep-element">
+                        <img class="quoting_tool-cke-keep-element"
+                             src="modules/QuotingTool/resources/images/placeholder-logo.png" alt=""
+                             style="height: 100px;">
+                    </p>
+                </div>
+
+                <div class="clear">&nbsp;</div>
+            </div>
+
+            <div class="quoting_tool-btn-options quoting_tool-btn-left-options">
+                <div class="doc-block__control btn--block-control doc-block__control--drag quoting_tool-btn-options-item"
+                     ng-show="app.data.blocks.image.layout.enable_move">
+                    <i class="icon-align-justify"></i>
+                </div>
+            </div>
+
+            <div class="quoting_tool-btn-options quoting_tool-btn-right-options">
+                <div class="doc-block__control btn--block-control btn--block-control-settings quoting_tool-btn-options-item"
+                     ng-show="app.data.blocks.image.layout.enable_setting"
+                     ng-click="setting($event, app.data.blocks.image)">
+                    <i class="icon-cog"></i>
+                </div>
+                <div class="doc-block__control btn--block-control btn--block-control-del quoting_tool-btn-options-item"
+                     ng-show="app.data.blocks.image.layout.enable_remove"
+                     ng-click="remove($event)">
+                    <i class="icon-trash"></i>
+                </div>
+            </div>
+        </div>
+
+        <div class="content-container block-handle"
+             data-id="layouts/vlayout/modules/QuotingTool/resources/js/views/blocks/line_break.html">
+            <div class="content-editable">
+                <div class="linebreak">&nbsp;</div>
+            </div>
+
+            <div class="quoting_tool-btn-options quoting_tool-btn-left-options">
+                <div class="doc-block__control btn--block-control doc-block__control--drag quoting_tool-btn-options-item"
+                     ng-show="app.data.blocks.line_break.layout.enable_move">
+                    <i class="icon-align-justify"></i>
+                </div>
+            </div>
+
+            <div class="quoting_tool-btn-options quoting_tool-btn-right-options">
+                <div class="doc-block__control btn--block-control btn--block-control-settings quoting_tool-btn-options-item"
+                     ng-show="app.data.blocks.line_break.layout.enable_setting"
+                     ng-click="setting($event, app.data.blocks.line_break)">
+                    <i class="icon-cog"></i>
+                </div>
+                <div class="doc-block__control btn--block-control btn--block-control-del quoting_tool-btn-options-item"
+                     ng-show="app.data.blocks.image.layout.enable_remove"
+                     ng-click="remove($event)">
+                    <i class="icon-trash"></i>
+                </div>
+            </div>
+        </div>
+
+        <div class="content-container block-handle"
+             data-id="layouts/vlayout/modules/QuotingTool/resources/js/views/blocks/heading.html">
+            <div class="content-editable">
+                <div contenteditable="true" placeholder="Type your heading here...">
+                    <h1 class="quoting_tool-cke-keep-element"><br/></h1>
+                </div>
+            </div>
+
+            <div class="quoting_tool-btn-options quoting_tool-btn-left-options">
+                <div class="doc-block__control btn--block-control doc-block__control--drag quoting_tool-btn-options-item"
+                     ng-show="app.data.blocks.heading.layout.enable_move">
+                    <i class="icon-align-justify"></i>
+                </div>
+            </div>
+
+            <div class="quoting_tool-btn-options quoting_tool-btn-right-options">
+                <div class="doc-block__control btn--block-control btn--block-control-settings quoting_tool-btn-options-item"
+                     ng-show="app.data.blocks.heading.layout.enable_setting"
+                     ng-click="setting($event, app.data.blocks.heading)">
+                    <i class="icon-cog"></i>
+                </div>
+                <div class="doc-block__control btn--block-control btn--block-control-del quoting_tool-btn-options-item"
+                     ng-show="app.data.blocks.heading.layout.enable_remove"
+                     ng-click="remove($event)">
+                    <i class="icon-trash"></i>
+                </div>
+            </div>
+        </div>
+
+        <div class="content-container block-handle"
+             data-id="layouts/vlayout/modules/QuotingTool/resources/js/views/blocks/line_break.html">
+            <div class="content-editable">
+                <div class="linebreak">&nbsp;</div>
+            </div>
+
+            <div class="quoting_tool-btn-options quoting_tool-btn-left-options">
+                <div class="doc-block__control btn--block-control doc-block__control--drag quoting_tool-btn-options-item"
+                     ng-show="app.data.blocks.line_break.layout.enable_move">
+                    <i class="icon-align-justify"></i>
+                </div>
+            </div>
+
+            <div class="quoting_tool-btn-options quoting_tool-btn-right-options">
+                <div class="doc-block__control btn--block-control btn--block-control-settings quoting_tool-btn-options-item"
+                     ng-show="app.data.blocks.line_break.layout.enable_setting"
+                     ng-click="setting($event, app.data.blocks.line_break)">
+                    <i class="icon-cog"></i>
+                </div>
+                <div class="doc-block__control btn--block-control btn--block-control-del quoting_tool-btn-options-item"
+                     ng-show="app.data.blocks.image.layout.enable_remove"
+                     ng-click="remove($event)">
+                    <i class="icon-trash"></i>
+                </div>
+            </div>
+        </div>
+
+        <div class="content-container block-handle"
+             data-id="layouts/vlayout/modules/QuotingTool/resources/js/views/blocks/text.html">
+            <div class="content-editable quoting_tool-disable-margin">
+                <div contenteditable="true" placeholder="Type your text here..."
+                     style="width: 50%; float: left;">
+                    <p class="quoting_tool-cke-keep-element"
+                       style="padding-right: 10px;"><br/></p>
+                </div>
+                <div contenteditable="true" placeholder="Type your text here..."
+                     style="width: 50%; float: left;">
+                    <p class="quoting_tool-cke-keep-element"
+                       style="padding-right: 10px;"><br/></p>
+                </div>
+
+                <div class="clear">&nbsp;</div>
+            </div>
+
+            <div class="quoting_tool-btn-options quoting_tool-btn-left-options">
+                <div class="doc-block__control btn--block-control doc-block__control--drag quoting_tool-btn-options-item"
+                     ng-show="app.data.blocks.text.layout.enable_move">
+                    <i class="icon-align-justify"></i>
+                </div>
+            </div>
+
+            <div class="quoting_tool-btn-options quoting_tool-btn-right-options">
+                <div class="doc-block__control btn--block-control btn--block-control-settings quoting_tool-btn-options-item"
+                     ng-show="app.data.blocks.text.layout.enable_setting"
+                     ng-click="setting($event, app.data.blocks.text)">
+                    <i class="icon-cog"></i>
+                </div>
+                <div class="doc-block__control btn--block-control btn--block-control-del quoting_tool-btn-options-item"
+                     ng-show="app.data.blocks.text.layout.enable_remove"
+                     ng-click="remove($event)">
+                    <i class="icon-trash"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="quoting_tool-content-footer doc-block doc-block--footer"></div>
+
+    <div class="quoting_tool-content-page-break">
+        <div class="content-container block-handle">
+            <div class="content-editable">
+                <div class="pagebreak"></div>
+            </div>
+        </div>
+    </div>
+</div>
