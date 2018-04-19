@@ -101,6 +101,7 @@
                 switch (section) {
                     case $rootScope.SECTIONS.THEMES:
                         $rootScope.blockSectionId = $rootScope.SECTIONS.GENERAL_BACKGROUND;
+
                         break;
                     case $rootScope.SECTIONS.DECISION:
                         $rootScope.blockSectionId = $rootScope.SECTIONS.GENERAL_ACCEPT;

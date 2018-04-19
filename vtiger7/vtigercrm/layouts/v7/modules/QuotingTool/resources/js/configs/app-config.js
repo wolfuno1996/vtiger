@@ -284,6 +284,7 @@
                         name: 'Pricing table (IDC)',
                         icon: 'icon--block-pricingtable',
                         icon_supplement: 'IDC',
+                        icon_helptext: 'i',
                         enable_setting: true,
                         enable_remove: true,
                         enable_move: true
@@ -316,6 +317,7 @@
                         id: 'related_module',
                         name: 'Related module',
                         icon: 'icon--block-pricingtable',
+                        icon_helptext: 'i',
                         icon_supplement: 'REL',
                         enable_setting: true,
                         enable_remove: true,
@@ -483,6 +485,7 @@
                         name: 'Table(1 col)',
                         icon: 'icon--block-table',
                         icon_supplement: '1',
+                        icon_helptext: 'i',
                         enable_setting: true,
                         enable_remove: true,
                         enable_move: true

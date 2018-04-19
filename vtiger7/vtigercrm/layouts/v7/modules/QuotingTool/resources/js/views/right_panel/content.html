@@ -6,6 +6,7 @@
             </li>
             <li ng-class="{'active': section == SECTIONS.WIDGETS}">
                 <a href="" ng-click="showSection(SECTIONS.WIDGETS)">{{ 'Fields' | translate }}</a>
+                <span class="icon-helptext hide field-helptext " id="field-helptext" >i</span>
             </li>
             <li ng-class="{'active': section == SECTIONS.TOKENS}">
                 <a href="" ng-click="showSection(SECTIONS.TOKENS)">{{ 'Properties' | translate }}</a>
@@ -16,10 +17,9 @@
 
             <!-- blocks sections-->
             <div class="btn-sq-holder m--bottom" ng-if="section == SECTIONS.BLOCKS">
-                <!--<h3 class="redsign-blocks">Design Elements </h3>-->
+
                 <div ng-include="'layouts/v7/modules/QuotingTool/resources/js/views/right_panel/content_blocks.html'"></div>
-               <!-- <h3 class="redsign-blocks">Data Elements </h3>
-                <div ng-include="'layouts/v7/modules/QuotingTool/resources/js/views/right_panel/content_blocks_data_ele.html'"></div>-->
+
             </div>
 
             <!-- widgets section-->

@@ -33,6 +33,8 @@ class QuotingTool_ActionAjax_Action extends Vtiger_Action_Controller
         $this->exposeMethod('ImportDefaultTemplates');
         $this->exposeMethod('CreateNewProposal');
         $this->exposeMethod('save_proposal');
+        $this->exposeMethod('checkIconHelpText');
+
         $this->vteLicense();
     }
 
@@ -189,6 +191,7 @@ class QuotingTool_ActionAjax_Action extends Vtiger_Action_Controller
     /**
      * @param Vtiger_Request $request
      */
+
     public function save_setting(Vtiger_Request $request)
     {
         $module = $request->getModule();
@@ -872,5 +875,7 @@ class QuotingTool_ActionAjax_Action extends Vtiger_Action_Controller
             rmdir($dir);
         }
     }
+
+
 
 }

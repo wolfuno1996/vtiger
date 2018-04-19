@@ -2925,6 +2925,7 @@ class QuotingTool extends CRMEntity
         require_once("scripts/add_status_field_20170724_1.php");
         require_once("scripts/update_status_field_20170810_1.php");
         require_once("scripts/add_createnewrecords_field_20171101_1.php");
+        require_once("scripts/add_createnewtable_helptext.php");
     }
 
 }

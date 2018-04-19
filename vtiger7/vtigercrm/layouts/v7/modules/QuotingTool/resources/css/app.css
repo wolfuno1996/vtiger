@@ -2228,6 +2228,21 @@ a.align_off :hover{
     color: #fff;
     padding-left: 1px;
 }
+.icon-helptext{
+    position: absolute;
+    top: -4px;
+    left: 60px;
+    font-size: 10px;
+    background-color: cornflowerblue;
+    border-radius: 50%;
+    padding: 2px !important;
+    width: 12px;
+    height: 12px;
+    line-height: 9px;
+    text-align: center;
+    color: #fff !important;
+    padding-left: 2px;
+}
 
 .redsign-blocks{
     text-align: center;
@@ -2238,4 +2253,48 @@ a.align_off :hover{
 .break-line{
     white-space: pre-line;
     text-align: center;
+}
+
+.field-helptext{
+    top: 4px;
+}
+
+.properties-helptext{
+    margin-left: 5px;
+    position: inherit;
+    left: 0px;
+    margin-top: 2px;
+}
+
+.email-helptext{
+    position: inherit;
+    left: 0;
+    font-size: 11px;
+    width: 14px;
+    height: 14px;
+    line-height: 10px;
+}
+.other-helptext{
+    margin-left: 5px;
+    position: inherit;
+    left: 0px;
+    margin-top: 2px;
+}
+.product-helptext{
+    margin-left: 5px;
+    position: inherit;
+    left: 0px;
+    margin-top: 2px;
+}
+.background-helptext{
+    margin-left: 5px;
+    position: inherit;
+    left: 0px;
+    margin-top: 2px;
+}
+.related-helptext{
+    margin-left: 5px;
+    position: inherit;
+    left: 0px;
+    margin-top: 2px;
 }

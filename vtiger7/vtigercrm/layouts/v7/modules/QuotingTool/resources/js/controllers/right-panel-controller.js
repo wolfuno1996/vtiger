@@ -83,6 +83,14 @@
                     }, $scope.emailTemplate.css, false);
                 });
 
+                var dataHelptext = jQuery('input[name="icon_helptext"]').val();
+                dataHelptext = JSON.parse(dataHelptext);
+                if(dataHelptext.length>0){
+                    setTimeout(function () {
+                        jQuery("span.icon-helptext").removeClass("hide");
+                    }, 1000);
+                }
+
             };
 
             $scope.saveEmailTemplate = function () {
@@ -109,9 +117,9 @@
              * @param section
              */
             $scope.showSection = function (section) {
-                $rootScope.section = section;
-
                 // Show default
+
+                $rootScope.section = section;
                 switch (section) {
                     case $rootScope.SECTIONS.THEMES:
                         $rootScope.blockSectionId = $rootScope.SECTIONS.GENERAL_BACKGROUND;
@@ -121,6 +129,14 @@
                         break;
                     default:
                         break;
+                }
+
+                var dataHelptext = jQuery('input[name="icon_helptext"]').val();
+                dataHelptext = JSON.parse(dataHelptext);
+                if(dataHelptext.length>0){
+                    setTimeout(function () {
+                        jQuery("span.icon-helptext").removeClass("hide");
+                    }, 1000);
                 }
 
             };

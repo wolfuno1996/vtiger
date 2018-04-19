@@ -175,6 +175,8 @@ Class QuotingTool_Edit_View extends Vtiger_Edit_View
             $viewer->assign('QUOTER_SETTINGS', $quoterSettings);
         }
 
+        $isIconHelpText = $quotingToolRecordModel->isIconHelpText();
+
         $viewer->assign('RECORD_ID', $record);
         $viewer->assign('MODULE', $moduleName);
         $viewer->assign('TEMPLATE', $template);
@@ -186,8 +188,10 @@ Class QuotingTool_Edit_View extends Vtiger_Edit_View
         $viewer->assign('CUSTOM_FUNCTIONS', QuotingTool::getCustomFunctions());
         $viewer->assign('CUSTOM_FIELDS', QuotingTool::getCustomFields());
         $viewer->assign('COMPANY_FIELDS', QuotingTool::getCompanyFields());
+        $viewer->assign('ICON_HELPTEXT', $isIconHelpText);
 
         $viewer->view('EditView.tpl', $moduleName);
+
     }
 
     /**

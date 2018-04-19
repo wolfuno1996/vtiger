@@ -536,12 +536,16 @@ Vtiger.Class('QuotingToolJS', {}, {
         });
     },
 
+    iconHelpText:function () {
+        jQuery('span.icon-helptext').
+    },
+
     registerEvents: function () {
         var thisInstance = this;
         thisInstance.registerWidgetActions();
         thisInstance.registerWidgetButtons();
         thisInstance.registerWidgetOptions();
-
+        thisInstance.iconHelpText();
 
     }
 });
@@ -559,4 +563,9 @@ jQuery(document).ready(function () {
     var instance = new QuotingToolJS();
     instance.detailViewButtoncontainer = jQuery('.detailViewButtoncontainer');
     instance.registerEvents();
+
+
+
+
+
 });
