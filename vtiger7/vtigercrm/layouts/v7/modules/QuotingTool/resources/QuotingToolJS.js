@@ -537,7 +537,7 @@ Vtiger.Class('QuotingToolJS', {}, {
     },
 
     iconHelpText:function () {
-        jQuery('span.icon-helptext').
+
     },
 
     registerEvents: function () {
@@ -545,7 +545,7 @@ Vtiger.Class('QuotingToolJS', {}, {
         thisInstance.registerWidgetActions();
         thisInstance.registerWidgetButtons();
         thisInstance.registerWidgetOptions();
-        thisInstance.iconHelpText();
+       // thisInstance.iconHelpText();
 
     }
 });
@@ -564,6 +564,12 @@ jQuery(document).ready(function () {
     instance.detailViewButtoncontainer = jQuery('.detailViewButtoncontainer');
     instance.registerEvents();
 
+    //Click Modal Icon_HelpText
+    jQuery(document).on('click','.icon-helptext',function () {
+        var id_helptext = jQuery(this).attr("id");
+        console.log(id_helptext);
+        app.helper.showModal("thanhdeptrai");
+    })
 
 
 

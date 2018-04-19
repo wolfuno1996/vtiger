@@ -2255,18 +2255,12 @@ a.align_off :hover{
     text-align: center;
 }
 
-.field-helptext{
+#field-helptext{
     top: 4px;
 }
 
-.properties-helptext{
-    margin-left: 5px;
-    position: inherit;
-    left: 0px;
-    margin-top: 2px;
-}
 
-.email-helptext{
+#email-helptext{
     position: inherit;
     left: 0;
     font-size: 11px;
@@ -2274,27 +2268,12 @@ a.align_off :hover{
     height: 14px;
     line-height: 10px;
 }
-.other-helptext{
+
+
+#custom-functions-helptext, #company-information-helptext, #custom-fields-helptext,#auth-integration-helptext,#expire-in-days-helptext,#attachments-helptext,#notes-helptext,#others-helptext,#related-helptext,#background-helptext,#product-helptext,#other-information-helptext,#properties-helptext{
     margin-left: 5px;
     position: inherit;
     left: 0px;
     margin-top: 2px;
 }
-.product-helptext{
-    margin-left: 5px;
-    position: inherit;
-    left: 0px;
-    margin-top: 2px;
-}
-.background-helptext{
-    margin-left: 5px;
-    position: inherit;
-    left: 0px;
-    margin-top: 2px;
-}
-.related-helptext{
-    margin-left: 5px;
-    position: inherit;
-    left: 0px;
-    margin-top: 2px;
-}
+
