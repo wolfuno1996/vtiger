@@ -162,6 +162,7 @@ class QuotingTool_EmailPreviewTemplate_View extends Vtiger_IndexAjax_View
 
 
         echo $viewer->view('EmailPreviewTemplate.tpl', $moduleName, true);
+
     }
 
 }

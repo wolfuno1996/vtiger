@@ -440,8 +440,9 @@ jQuery.Class("Vtiger_Helper_Js",{
                 cb(container);
             });
         }
-
+        //console.log(content);
         container.html(content).modal(params);
+
         vtUtils.applyFieldElementsView(container);
         return container;
     },

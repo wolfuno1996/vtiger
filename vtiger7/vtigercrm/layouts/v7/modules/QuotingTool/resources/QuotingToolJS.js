@@ -225,10 +225,11 @@ Vtiger.Class('QuotingToolJS', {}, {
                 function (err, data) {
                     if (err === null) {
                         // css {'width': '796px'}
+
                         app.helper.hideModal().then(function () {
                             app.helper.showModal(data, {
                                 'cb': function (data) {
-                                    // console.log('aaaa');
+
                                     thisInstance.registerEventForEmailPopup();
                                 }
                             });
@@ -436,6 +437,7 @@ Vtiger.Class('QuotingToolJS', {}, {
                             firstButton.after(button);
                             button.on('click', function () {
                                 //if(templates)
+                                console.log(templates);
                                 thisInstance.showWidgetModal(templates);
 
                             });
@@ -447,7 +449,29 @@ Vtiger.Class('QuotingToolJS', {}, {
             );
         }
     },
-
+    IconHelpText: function () {
+        var thisInstance = this;
+        //Get Data From Input
+        var dataHelptext = jQuery('input[name="icon_helptext"]').val();
+        dataHelptext = JSON.parse(dataHelptext);
+        //Click Modal Icon_HelpText
+        jQuery(document).on('click','.icon-helptext',function () {
+            console.log(dataHelptext);
+            var id_helptext = jQuery(this).attr("id");
+            console.log(id_helptext);
+            for(var i=0;i<dataHelptext.length;i++){
+                    if(dataHelptext[i].element==id_helptext){
+                        templates = dataHelptext[i].helptext;
+                        break;
+                    }
+                    else{
+                        templates = "No data";
+                    }
+            }
+            thisInstance.showHelpTextModal(templates);
+        })
+    }
+    ,
     /**
      * @param templates
      */
@@ -521,6 +545,53 @@ Vtiger.Class('QuotingToolJS', {}, {
         });
     },
 
+    showHelpTextModal: function (templates) {
+        //var html = '<div class="modal myModal fade in" style="display: block;" aria-hidden="false">'
+            //+ '<div class="modal-backdrop fade in"></div>'
+           var html = '<div class="modal-dialog modal-lg">'
+            + '<div class="modal-content">'
+            + '<div class="modal-header">'
+            + '<div class="clearfix">'
+            + '<div class="pull-right">'
+            + '<button type="button" class="close" aria-label="Close" data-dismiss="modal">'
+            + '<span aria-hidden="true" class="fa fa-close"></span>'
+            + '</button>'
+            + '</div>'
+            //+ '<h4 class="pull-left">' + app.vtranslate('Document Designer (Email/PDF)') + '</h4>'
+            + '</div>'
+            + '</div>'
+            + '<div class="modal-body" style="overflow-y: auto;">'
+
+        var template = null;
+        if (templates && Array.isArray(templates)) {
+            var currentModule  = app.getModuleName();
+            var isCreateNewRecord = '';
+            for (var i = 0; i < templates.length; i++) {
+                template = templates[i];
+                var moduleTemplate = template.modulename;
+                if(template.createnewrecords == 1 && currentModule != moduleTemplate) {
+                    isCreateNewRecord = 1;
+                }else{
+                    isCreateNewRecord = 0;
+                }
+                html += '<h3>' + templates + '</h3>'
+            }
+        } else {
+            html += '<h3>' + templates + '</h3>'
+        }
+
+        html += '</tbody>'
+            + '</table>'
+            + '</div>'
+            + '</div>'
+            + '</div>';
+
+
+        // css {'width': '600px'}
+        app.helper.showModal(html);
+    },
+
+
     registerEmailTags: function () {
         var selectTags = jQuery('.select2-tags');
 
@@ -536,16 +607,14 @@ Vtiger.Class('QuotingToolJS', {}, {
         });
     },
 
-    iconHelpText:function () {
 
-    },
 
     registerEvents: function () {
         var thisInstance = this;
         thisInstance.registerWidgetActions();
         thisInstance.registerWidgetButtons();
         thisInstance.registerWidgetOptions();
-       // thisInstance.iconHelpText();
+        thisInstance.IconHelpText();
 
     }
 });
@@ -564,12 +633,7 @@ jQuery(document).ready(function () {
     instance.detailViewButtoncontainer = jQuery('.detailViewButtoncontainer');
     instance.registerEvents();
 
-    //Click Modal Icon_HelpText
-    jQuery(document).on('click','.icon-helptext',function () {
-        var id_helptext = jQuery(this).attr("id");
-        console.log(id_helptext);
-        app.helper.showModal("thanhdeptrai");
-    })
+
 
 
 
