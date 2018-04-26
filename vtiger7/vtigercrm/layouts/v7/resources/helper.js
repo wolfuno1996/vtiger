@@ -447,36 +447,7 @@ jQuery.Class("Vtiger_Helper_Js",{
         return container;
     },
 
-    showModalIconHelpText : function(content,params) {
-        // we should hide all existing modal's
-        //this.hideModal();
-        if(typeof params === "undefined") {
-            params = {};
-        }
-        var defaultParams = this.defaultModalParams();
-        params = jQuery.extend(defaultParams,params);
 
-        var cb = params.cb;
-        var container = jQuery('.myModal');
-
-		container.on('hidden.bs.modal',function() {
-			container.html('');
-			window.onbeforeunload = null;
-		});
-
-        if(typeof cb === "function") {
-            container.off('shown.bs.modal');
-            //This event is fired when the modal has been made visible to the user
-            container.on('shown.bs.modal', function () {
-                cb(container);
-            });
-        }
-        //console.log(content);
-        container.html(content).modal(params);
-
-        vtUtils.applyFieldElementsView(container);
-        return container;
-    },
 
     hideModal : function(){
 		var aDeferred = new jQuery.Deferred();

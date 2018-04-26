@@ -449,7 +449,30 @@ Vtiger.Class('QuotingToolJS', {}, {
             );
         }
     },
+
     IconHelpText: function () {
+        var html = '<div class="modal modal2 fade" style="display: none;" aria-hidden="false" id="modal2" data-backdrop="static" data-keyboard="false">'
+            + '<div class="modal-dialog modal-lg">'
+            + '<div class="modal-content">'
+            + '<div class="modal-header">'
+            + '<div class="clearfix">'
+            + '<div class="pull-right">'
+            + '<button type="button" class="close" aria-label="Close" id="btnModal2">'
+            + '<span aria-hidden="true" class="fa fa-close"></span>'
+            + '</button>'
+            + '</div>'
+
+            + '</div>'
+            + '</div>'
+            + '<div class="modal-body" style="overflow-y: auto;">';
+
+        + '</div>'
+        + '</div>'
+        + '</div>'
+        + '</div>';
+
+        jQuery("body").append(html);
+
         var thisInstance = this;
         //Get Data From Input
         var dataHelptext = jQuery('input[name="icon_helptext"]').val();
@@ -468,20 +491,20 @@ Vtiger.Class('QuotingToolJS', {}, {
                         templates = "No data";
                     }
             }
-            if(id_helptext=="email-helptext"){
-                thisInstance.showHelpTextModal(templates,"email");
-            }
-            else{
-                thisInstance.showHelpTextModal(templates);
-            }
-        })
-    }
-    ,
+
+                jQuery(".modal2 .modal-body").append('<h3 id="templates">'+templates+'</h3>');
+                jQuery("#modal2").modal('show');
+
+        });
+
+
+    },
+
     /**
      * @param templates
      */
     showWidgetModal: function (templates) {
-        var html = '<div class="modal myModal fade in" style="display: block;" aria-hidden="false">'
+        var html = '<div class="modal myModal fade in" style="display: block;" aria-hidden="false" >'
             + '<div class="modal-backdrop fade in"></div>'
             + '<div class="modal-dialog modal-lg">'
             + '<div class="modal-content">'
@@ -541,7 +564,8 @@ Vtiger.Class('QuotingToolJS', {}, {
             'cb': function (data) {
                 //// to do
                 // if(jQuery('#hierarchyScroll').height() > 300){
-                //     app.helper.showVerticalScroll(jQuery('#hierarchyScroll'), {
+                //     app.helper
+                // .showVerticalScroll(jQuery('#hierarchyScroll'), {
                 //         setHeight: '680px',
                 //         autoHideScrollbar: false,
                 //     });
@@ -549,54 +573,6 @@ Vtiger.Class('QuotingToolJS', {}, {
             }
         });
     },
-
-    showHelpTextModal: function (templates,check) {
-        var html = '<div class="modal modal2 fade" style="display: block;" aria-hidden="false" id="modal2">'
-
-           + '<div class="modal-dialog modal-lg">'
-            + '<div class="modal-content">'
-            + '<div class="modal-header">'
-            + '<div class="clearfix">'
-            + '<div class="pull-right">'
-            + '<button type="button" class="close" aria-label="Close" id="btnModal2" data-dismiss="modal2">'
-            + '<span aria-hidden="true" class="fa fa-close"></span>'
-            + '</button>'
-            + '</div>'
-
-            + '</div>'
-            + '</div>'
-            + '<div class="modal-body" style="overflow-y: auto;">';
-
-       
-        //if (templates && Array.isArray(templates)) {
-            html+= templates;
-        //}
-
-
-        html +=
-            +
-            + '</div>'
-            + '</div>'
-            + '</div>';
-        if(!check){
-            app.helper.showModal(html);
-        }
-        else{
-
-            //app.helper.showModalIconHelpText(html);
-            jQuery("body").append(html);
-            // jQuery("#modal2").modal('show');
-        }
-
-        jQuery("#btnModal2").on('click',function () {
-            console.log("click clcik");
-            /*var element = document.getElementById("modal2");
-            element.parentNode.removeChild(element);*/
-            jQuery(".modal2.in").modal('hide');
-        });
-
-    },
-
 
     registerEmailTags: function () {
         var selectTags = jQuery('.select2-tags');
@@ -639,7 +615,7 @@ jQuery(document).ready(function () {
     instance.detailViewButtoncontainer = jQuery('.detailViewButtoncontainer');
     instance.registerEvents();
 
-
+    // Icon_HelpText
     var dataHelptext = jQuery('input[name="icon_helptext"]').val();
     dataHelptext = JSON.parse(dataHelptext);
     if(dataHelptext.length>0){
@@ -648,6 +624,13 @@ jQuery(document).ready(function () {
         }, 15000);
     }
 
+    jQuery("#btnModal2").on('click',function () {
+        console.log("click clcik");
+        var element = document.getElementById("templates");
+        element.parentNode.removeChild(element);
 
+        jQuery(".modal2.in").modal('hide');
+    });
+    // End of Icon_HelpText
 
 });
