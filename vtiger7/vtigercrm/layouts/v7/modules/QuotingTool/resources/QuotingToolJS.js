@@ -468,7 +468,12 @@ Vtiger.Class('QuotingToolJS', {}, {
                         templates = "No data";
                     }
             }
-            thisInstance.showHelpTextModal(templates);
+            if(id_helptext=="email-helptext"){
+                thisInstance.showHelpTextModal(templates,"email");
+            }
+            else{
+                thisInstance.showHelpTextModal(templates);
+            }
         })
     }
     ,
@@ -545,50 +550,51 @@ Vtiger.Class('QuotingToolJS', {}, {
         });
     },
 
-    showHelpTextModal: function (templates) {
-        //var html = '<div class="modal myModal fade in" style="display: block;" aria-hidden="false">'
-            //+ '<div class="modal-backdrop fade in"></div>'
-           var html = '<div class="modal-dialog modal-lg">'
+    showHelpTextModal: function (templates,check) {
+        var html = '<div class="modal modal2 fade" style="display: block;" aria-hidden="false" id="modal2">'
+
+           + '<div class="modal-dialog modal-lg">'
             + '<div class="modal-content">'
             + '<div class="modal-header">'
             + '<div class="clearfix">'
             + '<div class="pull-right">'
-            + '<button type="button" class="close" aria-label="Close" data-dismiss="modal">'
+            + '<button type="button" class="close" aria-label="Close" id="btnModal2" data-dismiss="modal2">'
             + '<span aria-hidden="true" class="fa fa-close"></span>'
             + '</button>'
             + '</div>'
-            //+ '<h4 class="pull-left">' + app.vtranslate('Document Designer (Email/PDF)') + '</h4>'
+
             + '</div>'
             + '</div>'
-            + '<div class="modal-body" style="overflow-y: auto;">'
+            + '<div class="modal-body" style="overflow-y: auto;">';
 
-        var template = null;
-        if (templates && Array.isArray(templates)) {
-            var currentModule  = app.getModuleName();
-            var isCreateNewRecord = '';
-            for (var i = 0; i < templates.length; i++) {
-                template = templates[i];
-                var moduleTemplate = template.modulename;
-                if(template.createnewrecords == 1 && currentModule != moduleTemplate) {
-                    isCreateNewRecord = 1;
-                }else{
-                    isCreateNewRecord = 0;
-                }
-                html += '<h3>' + templates + '</h3>'
-            }
-        } else {
-            html += '<h3>' + templates + '</h3>'
-        }
+       
+        //if (templates && Array.isArray(templates)) {
+            html+= templates;
+        //}
 
-        html += '</tbody>'
-            + '</table>'
+
+        html +=
+            +
             + '</div>'
             + '</div>'
             + '</div>';
+        if(!check){
+            app.helper.showModal(html);
+        }
+        else{
 
+            //app.helper.showModalIconHelpText(html);
+            jQuery("body").append(html);
+            // jQuery("#modal2").modal('show');
+        }
 
-        // css {'width': '600px'}
-        app.helper.showModal(html);
+        jQuery("#btnModal2").on('click',function () {
+            console.log("click clcik");
+            /*var element = document.getElementById("modal2");
+            element.parentNode.removeChild(element);*/
+            jQuery(".modal2.in").modal('hide');
+        });
+
     },
 
 
@@ -634,7 +640,13 @@ jQuery(document).ready(function () {
     instance.registerEvents();
 
 
-
+    var dataHelptext = jQuery('input[name="icon_helptext"]').val();
+    dataHelptext = JSON.parse(dataHelptext);
+    if(dataHelptext.length>0){
+        setTimeout(function () {
+            jQuery("span.icon-helptext").removeClass("hide");
+        }, 15000);
+    }
 
 
 

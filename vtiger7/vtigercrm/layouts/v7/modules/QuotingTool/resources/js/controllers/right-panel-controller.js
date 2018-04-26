@@ -90,7 +90,6 @@
                         jQuery("span.icon-helptext").removeClass("hide");
                     }, 1000);
                 }
-
             };
 
             $scope.saveEmailTemplate = function () {

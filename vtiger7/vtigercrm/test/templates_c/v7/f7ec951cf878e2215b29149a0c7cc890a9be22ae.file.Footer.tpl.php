@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.7, created on 2018-04-09 15:00:44
+<?php /* Smarty version Smarty-3.1.7, created on 2018-04-26 03:50:16
          compiled from "C:\vTiger\vtiger7\vtigercrm\includes\runtime/../../layouts/v7\modules\Vtiger\Footer.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:212095acb801c78eeb6-20049399%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'f7ec951cf878e2215b29149a0c7cc890a9be22ae' => 
     array (
       0 => 'C:\\vTiger\\vtiger7\\vtigercrm\\includes\\runtime/../../layouts/v7\\modules\\Vtiger\\Footer.tpl',
-      1 => 1520586670,
+      1 => 1524714549,
       2 => 'file',
     ),
   ),
@@ -15,14 +15,14 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   'function' => 
   array (
   ),
+  'version' => 'Smarty-3.1.7',
+  'unifunc' => 'content_5acb801c9d871',
   'variables' => 
   array (
     'VTIGER_VERSION' => 0,
     'LANGUAGE_STRINGS' => 0,
   ),
   'has_nocache_code' => false,
-  'version' => 'Smarty-3.1.7',
-  'unifunc' => 'content_5acb801c9d871',
 ),false); /*/%%SmartyHeaderCode%%*/?>
 <?php if ($_valid && !is_callable('content_5acb801c9d871')) {function content_5acb801c9d871($_smarty_tpl) {?>
 
@@ -46,7 +46,8 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 <div id='helpPageOverlay'></div>
 <div id="js_strings" class="hide noprint"><?php echo Zend_Json::encode($_smarty_tpl->tpl_vars['LANGUAGE_STRINGS']->value);?>
 </div>
-<div class="modal myModal fade"></div>
+<div class="modal myModal fade" ></div>
+
 <?php echo $_smarty_tpl->getSubTemplate (vtemplate_path('JSResources.tpl'), $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, null, null, array(), 0);?>
 
 </body>
