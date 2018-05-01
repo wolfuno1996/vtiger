@@ -22,7 +22,8 @@
         <i class="icon icon--xbig icon--clear-background-image {{block.layout.icon}}"></i>
 
         <span ng-if="block.layout.icon_supplement" class="icon-supplement ">{{ block.layout.icon_supplement }}</span>
-        <span ng-if="block.layout.icon_helptext" class="icon-helptext hide">{{ block.layout.icon_helptext }}</span>
+        <div><span ng-if="block.layout.icon_helptext" ng-click="showIconHelpText(block.layout.id);$event.stopPropagation()" class="icon-helptext hide">{{ block.layout.icon_helptext }}</span></div>
+
 
         <span ng-if="block.layout.name == 'Related module'" class="btn--sq-icon__text break-line" id="breakline-related">{{ block.layout.name | translate}}</span>
         <span ng-if="block.layout.name == 'Pricing table'" class="btn--sq-icon__text break-line" id="breakline-pricing">{{ block.layout.name | translate}}</span>

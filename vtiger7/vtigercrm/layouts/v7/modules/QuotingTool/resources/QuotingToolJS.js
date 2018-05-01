@@ -470,7 +470,7 @@ Vtiger.Class('QuotingToolJS', {}, {
         + '</div>'
         + '</div>'
         + '</div>';
-
+        // Append Modal2 to Body of Website
         jQuery("body").append(html);
 
         var thisInstance = this;
@@ -478,10 +478,8 @@ Vtiger.Class('QuotingToolJS', {}, {
         var dataHelptext = jQuery('input[name="icon_helptext"]').val();
         dataHelptext = JSON.parse(dataHelptext);
         //Click Modal Icon_HelpText
-        jQuery(document).on('click','.icon-helptext',function () {
-            console.log(dataHelptext);
+        jQuery(document).on('click','.icon-helptext',function(e) {
             var id_helptext = jQuery(this).attr("id");
-            console.log(id_helptext);
             for(var i=0;i<dataHelptext.length;i++){
                     if(dataHelptext[i].element==id_helptext){
                         templates = dataHelptext[i].helptext;
@@ -625,10 +623,8 @@ jQuery(document).ready(function () {
     }
 
     jQuery("#btnModal2").on('click',function () {
-        console.log("click clcik");
         var element = document.getElementById("templates");
         element.parentNode.removeChild(element);
-
         jQuery(".modal2.in").modal('hide');
     });
     // End of Icon_HelpText

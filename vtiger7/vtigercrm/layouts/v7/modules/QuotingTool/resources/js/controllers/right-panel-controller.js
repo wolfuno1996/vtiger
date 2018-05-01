@@ -91,7 +91,46 @@
                     }, 1000);
                 }
             };
+            $scope.showIconHelpText = function (id) {
+                var html = '<div class="modal modal2 fade" style="display: none;" aria-hidden="false" id="modal2" data-backdrop="static" data-keyboard="false">'
+                    + '<div class="modal-dialog modal-lg">'
+                    + '<div class="modal-content">'
+                    + '<div class="modal-header">'
+                    + '<div class="clearfix">'
+                    + '<div class="pull-right">'
+                    + '<button type="button" class="close" aria-label="Close" id="btnModal2">'
+                    + '<span aria-hidden="true" class="fa fa-close"></span>'
+                    + '</button>'
+                    + '</div>'
+                    + '</div>'
+                    + '</div>'
+                    + '<div class="modal-body" style="overflow-y: auto;">';
+                + '</div>'
+                + '</div>'
+                + '</div>'
+                + '</div>';
+                // Append Modal2 to Body of Website
+                jQuery("body").append(html);
 
+                var thisInstance = this;
+                //Get Data From Input
+                var dataHelptext = jQuery('input[name="icon_helptext"]').val();
+                dataHelptext = JSON.parse(dataHelptext);
+                //Click Modal Icon_HelpText
+
+                    console.log(id);
+                    for(var i=0;i<dataHelptext.length;i++){
+                        if(dataHelptext[i].element==id){
+                            var  templates = dataHelptext[i].helptext;
+                            break;
+                        }
+                        else{
+                            templates = "No data";
+                        }
+                    }
+                    jQuery(".modal2 .modal-body").append('<h3 id="templates">'+templates+'</h3>');
+                    jQuery("#modal2").modal('show');
+            };
             $scope.saveEmailTemplate = function () {
                 // Hide modal
                 AppHelper.hideModalWindow();
@@ -216,7 +255,10 @@
              * @param {Object=} focus
              */
             $scope.addBlock = function (block, type, focus) {
+
+
                 // Main page content
+
                 var content = $rootScope.app.container.find('.quoting_tool-content');
                 // (Option) - Type for append
                 if (typeof type === 'undefined') {
@@ -475,6 +517,7 @@
             };
 
             var evtAddBlock = $rootScope.$on('$evtAddBlock', function (event, args) {
+                event.stopPropagation();
                 if (typeof args !== 'undefined') {
                     var id = args['id'];
                     var type = args['type'];
