@@ -15,6 +15,7 @@
         <div id="js_custom_functions" class="hide noprint">{Zend_Json::encode($CUSTOM_FUNCTIONS)}</div>
         <div id="js_custom_fields" class="hide noprint">{Zend_Json::encode($CUSTOM_FIELDS)}</div>
         <div id="js_company_fields" class="hide noprint">{Zend_Json::encode($COMPANY_FIELDS)}</div>
+        <input type="hidden" value='{Zend_Json::encode($ICON_HELPTEXT)}' name="icon_helptext"/>
         {if (isset($QUOTER_SETTINGS))}
             <div id="js_quoter_settings" class="hide noprint">{Zend_Json::encode($QUOTER_SETTINGS)}</div>
         {/if}

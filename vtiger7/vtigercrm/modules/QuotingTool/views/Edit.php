@@ -191,7 +191,6 @@ Class QuotingTool_Edit_View extends Vtiger_Edit_View
         $viewer->assign('ICON_HELPTEXT', $isIconHelpText);
 
         $viewer->view('EditView.tpl', $moduleName);
-
     }
 
     /**

@@ -32,6 +32,24 @@
                         }
                     }
                 })
+                .state('base.accept', {
+                    url: 'accept',
+                    views: {
+                        'right_panel_tool_items@': {
+                            templateUrl: 'layouts/v7/modules/QuotingTool/resources/js/views/right_panel/accept.html',
+                            controller: 'CtrlAppRightPanelGeneral'
+                        }
+                    }
+                })
+                .state('base.background', {
+                    url: 'background',
+                    views: {
+                        'right_panel_tool_items@': {
+                            templateUrl: 'layouts/v7/modules/QuotingTool/resources/js/views/right_panel/background.html',
+                            controller: 'CtrlAppRightPanelGeneral'
+                        }
+                    }
+                })
                 .state('base.history', {
                     url: 'history',
                     views: {
@@ -117,8 +135,6 @@
                 var dataHelptext = jQuery('input[name="icon_helptext"]').val();
                 dataHelptext = JSON.parse(dataHelptext);
                 //Click Modal Icon_HelpText
-
-                    console.log(id);
                     for(var i=0;i<dataHelptext.length;i++){
                         if(dataHelptext[i].element==id){
                             var  templates = dataHelptext[i].helptext;
@@ -128,7 +144,7 @@
                             templates = "No data";
                         }
                     }
-                    jQuery(".modal2 .modal-body").append('<h3 id="templates">'+templates+'</h3>');
+                    jQuery(".modal2 .modal-body").append('<h5 id="templates">'+templates+'</h5>');
                     jQuery("#modal2").modal('show');
             };
             $scope.saveEmailTemplate = function () {

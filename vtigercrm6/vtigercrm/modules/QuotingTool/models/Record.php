@@ -289,5 +289,17 @@ class QuotingTool_Record_Model extends Vtiger_Record_Model
 
         return $this;
     }
+    public function isIconHelpText(){
+        global $adb;
+        $sql = "SELECT * from vtiger_quotingtool_helptext";
+        $params = array();
+        $rs = $adb->pquery($sql,$params);
+        $result = [];
+        if($adb->num_rows($rs) > 0){
+            while($row = $adb->fetchByAssoc($rs))
+                $result[] = $row;
+        };
+        return $result;
+    }
 
 }

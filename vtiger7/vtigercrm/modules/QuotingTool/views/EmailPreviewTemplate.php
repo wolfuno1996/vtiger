@@ -141,10 +141,11 @@ class QuotingTool_EmailPreviewTemplate_View extends Vtiger_IndexAjax_View
             }
         }
 
-        // Email list
+        // Send Email list
 
             $multiRecord = $request->get('multiRecord');
             $email_field_list = $quotingTool->getEmailList($relModule, $recordId, $isCreateNewRecord,$multiRecord);
+
 
 
 

@@ -107,7 +107,8 @@
                         icon: 'icon--block-heading',
                         enable_setting: true,
                         enable_remove: true,
-                        enable_move: true
+                        enable_move: true,
+                        is_design_elements : true
                     }
                 },
                 text: {
@@ -140,7 +141,8 @@
                         icon: 'icon--block-text',
                         enable_setting: false,
                         enable_remove: true,
-                        enable_move: true
+                        enable_move: true,
+                        is_design_elements : true
                     }
                 },
                 image: {
@@ -161,7 +163,8 @@
                         icon: 'icon--block-image',
                         enable_setting: true,
                         enable_remove: true,
-                        enable_move: true
+                        enable_move: true,
+                        is_design_elements : true
                     }
                 },
                 video: {
@@ -181,7 +184,8 @@
                         icon: 'icon--block-video',
                         enable_setting: false,
                         enable_remove: true,
-                        enable_move: true
+                        enable_move: true,
+                        is_design_elements : true
                     }
                 },
                 table: {
@@ -212,7 +216,8 @@
                         icon: 'icon--block-table',
                         enable_setting: false,
                         enable_remove: true,
-                        enable_move: true
+                        enable_move: true,
+                        is_design_elements : true
                     }
                 },
                 pricing_table: {
@@ -243,8 +248,10 @@
                         name: 'Pricing table',
                         icon: 'icon--block-pricingtable',
                         enable_setting: true,
+                        icon_helptext: 'i',
                         enable_remove: true,
-                        enable_move: true
+                        enable_move: true,
+                        is_data_elements : true
                     }
                 },
                 pricing_table_idc: {
@@ -274,10 +281,12 @@
                         id: 'pricing_table_idc',
                         name: 'Pricing table (IDC)',
                         icon: 'icon--block-pricingtable',
+                        icon_helptext: 'i',
                         icon_supplement: 'IDC',
                         enable_setting: true,
                         enable_remove: true,
-                        enable_move: true
+                        enable_move: true,
+                        is_data_elements : true
                     }
                 },
                 related_module: {
@@ -307,10 +316,12 @@
                         id: 'related_module',
                         name: 'Related module',
                         icon: 'icon--block-pricingtable',
+                        icon_helptext: 'i',
                         icon_supplement: 'REL',
                         enable_setting: true,
                         enable_remove: true,
-                        enable_move: true
+                        enable_move: true,
+                        is_data_elements : true
                     }
                 },
                 toc: {
@@ -326,7 +337,8 @@
                         icon: 'icon--block-toc',
                         enable_setting: false,
                         enable_remove: true,
-                        enable_move: true
+                        enable_move: true,
+                        is_design_elements : true
                     }
                 },
                 page_break: {
@@ -342,7 +354,8 @@
                         icon: 'icon--block-pagebreak',
                         enable_setting: false,
                         enable_remove: true,
-                        enable_move: true
+                        enable_move: true,
+                        is_design_elements : true
                     }
                 },
                 line_break: {
@@ -358,7 +371,8 @@
                         icon: 'fa fa-level-down force-fa',
                         enable_setting: false,
                         enable_remove: true,
-                        enable_move: true
+                        enable_move: true,
+                        is_design_elements : true
                     }
                 },
                 line_hr: {
@@ -374,7 +388,8 @@
                         icon: 'fa-arrows-h force-fa',
                         enable_setting: false,
                         enable_remove: true,
-                        enable_move: true
+                        enable_move: true,
+                        is_design_elements : true
                     }
                 },
                 cover_page: {
@@ -399,7 +414,8 @@
                         icon: 'icon--block-cover',
                         enable_setting: false,
                         enable_remove: true,
-                        enable_move: true
+                        enable_move: true,
+                        is_design_elements : true
                     }
                 },
                 page_header: {
@@ -421,7 +437,8 @@
                         icon: 'icon--block-header',
                         enable_setting: false,
                         enable_remove: true,
-                        enable_move: true
+                        enable_move: true,
+                        is_design_elements : true
                     }
                 },
                 page_footer: {
@@ -443,7 +460,8 @@
                         icon: 'icon--block-footer',
                         enable_setting: false,
                         enable_remove: true,
-                        enable_move: true
+                        enable_move: true,
+                        is_design_elements : true
                     }
                 },
                 tbl_one_column: {
@@ -474,9 +492,11 @@
                         name: 'Table(1 col)',
                         icon: 'icon--block-table',
                         icon_supplement: '1',
+                        icon_helptext: 'i',
                         enable_setting: true,
                         enable_remove: true,
-                        enable_move: true
+                        enable_move: true,
+                        is_data_elements : true
                     }
                 },
                 tbl_two_columns: {
@@ -509,7 +529,8 @@
                         icon_supplement: '2',
                         enable_setting: true,
                         enable_remove: true,
-                        enable_move: true
+                        enable_move: true,
+                        is_data_elements : true
                     }
                 },
             },

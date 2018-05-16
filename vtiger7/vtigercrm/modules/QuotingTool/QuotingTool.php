@@ -2585,7 +2585,7 @@ class QuotingTool extends CRMEntity
             }
 
         }
-
+        $email_field_list = array_unique($email_field_list);
         return $email_field_list;
     }
 

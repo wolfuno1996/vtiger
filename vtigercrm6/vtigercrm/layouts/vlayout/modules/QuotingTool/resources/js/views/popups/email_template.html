@@ -6,9 +6,10 @@
         </div>
         <form class="form-horizontal" action="#">
             <div name='massEditContent' class="row-fluid">
-                <div class="modal-body">
+                <div class="modal-body" style="margin: 10px; text-align: center">
                     <div class="row-fluid">
                         <div class="span12">
+                            <span class="icon-helptext" id="email-helptext">i</span>
                             <input type="text" class="input-large" name="tmp_email_subject"
                                    placeholder="{{ 'Subject' | translate }}" style="width: 99%"
                                    ng-model="app.model.email_subject"/>

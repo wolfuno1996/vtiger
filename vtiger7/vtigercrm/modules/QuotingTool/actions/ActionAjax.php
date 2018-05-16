@@ -33,7 +33,7 @@ class QuotingTool_ActionAjax_Action extends Vtiger_Action_Controller
         $this->exposeMethod('ImportDefaultTemplates');
         $this->exposeMethod('CreateNewProposal');
         $this->exposeMethod('save_proposal');
-        $this->exposeMethod('checkIconHelpText');
+
 
         $this->vteLicense();
     }

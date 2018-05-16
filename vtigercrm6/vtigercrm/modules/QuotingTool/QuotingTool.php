@@ -2421,7 +2421,7 @@ class QuotingTool extends CRMEntity
      * @param int $recordId
      * @return array
      */
-    public function getEmailList($moduleName, $recordId, $isCreateNewRecord, $mutipRecord)
+        public function getEmailList($moduleName, $recordId, $isCreateNewRecord, $mutipRecord)
     {
         $email_field_list = array();
         $listRecord = array();
@@ -2585,7 +2585,7 @@ class QuotingTool extends CRMEntity
             }
         }
 
-
+        $email_field_list = array_unique($email_field_list);
         return $email_field_list;
     }
 

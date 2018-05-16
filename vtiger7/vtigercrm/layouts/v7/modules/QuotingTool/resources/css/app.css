@@ -2278,3 +2278,14 @@ a.align_off :hover{
     margin-top: 2px;
 }
 
+.block-custom .btn--sq-icon__text{
+    top: 35px;
+    white-space: normal;
+    overflow: unset !important;
+    bottom: unset;
+}
+
+.block-custom{
+    height: 84px;
+    overflow: hidden !important;
+}

@@ -1,0 +1,64 @@
+<div>
+    <div class="doctool-subhead m--bottom-sm">
+        <span>{{ 'Background Image' | translate }}</span><span style="top: 0px;" class="icon-helptext hide" id="background-helptext">i</span>
+    </div>
+
+    <div class="m--bottom">
+        <img class="quoting_tool-background-image-preview"
+             ng-src="{{app.model.settings.background.image ? app.model.settings.background.image : previewBackground}}"
+             alt=""
+             ng-click="changeBackgroundImage($event)">
+    </div>
+
+    <div class="m--bottom">
+        <button class="btn btn-primary" ng-click="changeBackgroundImage($event)">{{ 'Change' | translate }}</button>
+        <button class="btn" ng-click="resetBackgroundImage($event)">{{ 'Reset' | translate }}</button>
+        <button class="btn btn-danger" ng-click="removeBackgroundImage($event)">{{ 'Remove' | translate }}</button>
+    </div>
+
+    <div class="m--bottom">
+        <div class="doctool-subhead m--bottom-sm">
+            <span>{{ 'Background Size' | translate }}</span>
+        </div>
+
+        <ul class="unstyled" style="padding-left: 24px;">
+
+            <li>
+                <label class="radio">
+                    <input type="radio" name="backgroundSize" value="auto" checked
+                           ng-model="app.model.settings.background.size"
+                           ng-change="changeBackgroundSize(app.model.settings.background.size)">
+                    <span>{{ 'Auto' | translate }}</span>
+                </label>
+            </li>
+
+            <li>
+                <label class="radio">
+                    <input type="radio" name="backgroundSize" value="100%"
+                           ng-model="app.model.settings.background.size"
+                           ng-change="changeBackgroundSize(app.model.settings.background.size)">
+                    <span>100%</span>
+                </label>
+            </li>
+
+            <li>
+                <label class="radio">
+                    <input type="radio" name="backgroundSize" value="cover"
+                           ng-model="app.model.settings.background.size"
+                           ng-change="changeBackgroundSize(app.model.settings.background.size)">
+                    <span>{{ 'Cover' | translate }}</span>
+                </label>
+            </li>
+
+            <li>
+                <label class="radio">
+                    <input type="radio" name="backgroundSize" value="contain"
+                           ng-model="app.model.settings.background.size"
+                           ng-change="changeBackgroundSize(app.model.settings.background.size)">
+                    <span>{{ 'Contain' | translate }}</span>
+                </label>
+            </li>
+
+        </ul>
+    </div>
+</div>

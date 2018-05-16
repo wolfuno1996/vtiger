@@ -2,11 +2,7 @@
     <div class="quoting_tool-tool-items-main">
         <ul class="list list--tabs list--justified m--bottom">
             <li ng-class="{'active': section == SECTIONS.DECISION}">
-                <a href="" ng-click="showSection(SECTIONS.DECISION)">{{ 'Accept' | translate }}/{{ 'Decline' | translate }}</a>
-            </li>
-
-            <li ng-class="{'active': section == SECTIONS.THEMES}">
-                <a href="" ng-click="showSection(SECTIONS.THEMES)">{{ 'Theme' | translate }}</a>
+                <a href="" ng-click="showSection(SECTIONS.DECISION)">{{ 'General' | translate }}</a>
             </li>
         </ul>
 
@@ -17,13 +13,6 @@
                  ng-if="section == SECTIONS.DECISION">
                 <div ng-include="'layouts/vlayout/modules/QuotingTool/resources/js/views/right_panel/general_decision.html'"
                      onload="load_decision()"></div>
-            </div>
-
-            <!-- themes sections-->
-            <div class="btn-sq-holder m--bottom" style="margin-right: 0;"
-                 ng-if="section == SECTIONS.THEMES">
-                <div ng-include="'layouts/vlayout/modules/QuotingTool/resources/js/views/right_panel/general_themes.html'"
-                     onload="load_background()"></div>
             </div>
         </div>
 

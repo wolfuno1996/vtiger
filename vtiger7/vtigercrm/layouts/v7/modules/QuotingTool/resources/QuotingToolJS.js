@@ -81,8 +81,6 @@ Vtiger.Class('QuotingToolJS', {}, {
 
                 }
             }
-
-
         });
 
         // Send email
@@ -363,6 +361,7 @@ Vtiger.Class('QuotingToolJS', {}, {
                     app.helper.hideProgress();
                     if (err === null) {
                         var templates = data;
+
                         // fix issue: button push other button down
                         var currentDiv = $("#appnav").parent();
                         var currentClass = currentDiv.attr("class");
@@ -415,9 +414,11 @@ Vtiger.Class('QuotingToolJS', {}, {
             };
             app.request.post({data: params}).then(
                 function (err, data) {
+                    console.log(err);
                     app.helper.hideProgress();
                     if (err === null) {
                         var templates = data;
+
                         // fix issue: button push other button down
                         var currentDiv = $(".listViewMassActions").parent();
                         var currentClass = currentDiv.attr("class");
@@ -429,15 +430,17 @@ Vtiger.Class('QuotingToolJS', {}, {
                       //  prevDiv.attr('class', newClass);
 
                         var navContainer = jQuery('.listViewMassActions ul');
-                        var button = jQuery('<li><a href="#">' +
+                        var button = jQuery('<li><a href="#" class="hidden" id="pdfEmail">' +
                             '<div class="fa" aria-hidden="true"></div>' + app.vtranslate('Document Designer: PDF/Email') +
                             '</a></li>');
+
                         if (templates.length > 0) {
+
                             var firstButton = navContainer.find('li:last');
                             firstButton.after(button);
                             button.on('click', function () {
                                 //if(templates)
-                                console.log(templates);
+
                                 thisInstance.showWidgetModal(templates);
 
                             });
@@ -451,8 +454,9 @@ Vtiger.Class('QuotingToolJS', {}, {
     },
 
     IconHelpText: function () {
+        var module = app.getModuleName();
         var html = '<div class="modal modal2 fade" style="display: none;" aria-hidden="false" id="modal2" data-backdrop="static" data-keyboard="false">'
-            + '<div class="modal-dialog modal-lg">'
+            + '<div class="modal-dialog modal-lg" style="width: 500px">'
             + '<div class="modal-content">'
             + '<div class="modal-header">'
             + '<div class="clearfix">'
@@ -473,13 +477,15 @@ Vtiger.Class('QuotingToolJS', {}, {
         // Append Modal2 to Body of Website
         jQuery("body").append(html);
 
-        var thisInstance = this;
         //Get Data From Input
-        var dataHelptext = jQuery('input[name="icon_helptext"]').val();
-        dataHelptext = JSON.parse(dataHelptext);
+        if(module=='QuotingTool' && app.getViewName() == 'Edit') {
+            var dataHelptext = jQuery('input[name="icon_helptext"]').val();
+            dataHelptext = JSON.parse(dataHelptext);
+        }
         //Click Modal Icon_HelpText
         jQuery(document).on('click','.icon-helptext',function(e) {
             var id_helptext = jQuery(this).attr("id");
+
             for(var i=0;i<dataHelptext.length;i++){
                     if(dataHelptext[i].element==id_helptext){
                         templates = dataHelptext[i].helptext;
@@ -490,12 +496,10 @@ Vtiger.Class('QuotingToolJS', {}, {
                     }
             }
 
-                jQuery(".modal2 .modal-body").append('<h3 id="templates">'+templates+'</h3>');
+                jQuery(".modal2 .modal-body").append('<h5 id="templates">'+templates+'</h5>');
                 jQuery("#modal2").modal('show');
 
         });
-
-
     },
 
     /**
@@ -587,8 +591,6 @@ Vtiger.Class('QuotingToolJS', {}, {
         });
     },
 
-
-
     registerEvents: function () {
         var thisInstance = this;
         thisInstance.registerWidgetActions();
@@ -600,6 +602,9 @@ Vtiger.Class('QuotingToolJS', {}, {
 });
 
 jQuery(document).ready(function () {
+
+    var module = app.getModuleName();
+
     // Add css to screen dose not move when open dialog
     $("head").append("<style>body.modal-open{padding-right: 0px!important;}</style>");
     // // Fix auto add resizeable to textarea on IE
@@ -614,19 +619,22 @@ jQuery(document).ready(function () {
     instance.registerEvents();
 
     // Icon_HelpText
-    var dataHelptext = jQuery('input[name="icon_helptext"]').val();
-    dataHelptext = JSON.parse(dataHelptext);
-    if(dataHelptext.length>0){
-        setTimeout(function () {
-            jQuery("span.icon-helptext").removeClass("hide");
-        }, 15000);
+    if(module=='QuotingTool' && app.getViewName() == 'Edit') {
+        var dataHelptext = jQuery('input[name="icon_helptext"]').val();
+        dataHelptext = JSON.parse(dataHelptext);
+        if (dataHelptext.length > 0) {
+
+            setInterval(function () {
+                jQuery("span.icon-helptext").removeClass("hide");
+                //clearInterval();
+            }, 1000);
+        }
+
+        jQuery("#btnModal2").on('click', function () {
+            var element = document.getElementById("templates");
+            element.parentNode.removeChild(element);
+            jQuery(".modal2.in").modal('hide');
+        });
+        // End of Icon_HelpText
     }
-
-    jQuery("#btnModal2").on('click',function () {
-        var element = document.getElementById("templates");
-        element.parentNode.removeChild(element);
-        jQuery(".modal2.in").modal('hide');
-    });
-    // End of Icon_HelpText
-
 });

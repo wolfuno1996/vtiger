@@ -2180,3 +2180,54 @@ a.align_off :hover{
     text-align: center;
     color: #fff;
 }
+.block-custom .btn--sq-icon__text{
+    top: 35px;
+    white-space: normal;
+    overflow: unset !important;
+    bottom: unset;
+}
+
+.block-custom{
+    height: 84px;
+    overflow: hidden !important;
+}
+.icon-helptext {
+    position: absolute;
+    top: -4px;
+    left: 60px;
+    font-size: 8px;
+    background-color: cornflowerblue;
+    border-radius: 50%;
+    padding: 2px !important;
+    width: 8px;
+    height: 8px;
+    line-height: 8px;
+    text-align: center;
+    color: #fff !important;
+    padding-left: 2px;
+}
+
+#field-helptext{
+    top: 4px;
+}
+
+
+#email-helptext{
+    position: relative;
+    left: 0;
+    font-size: 11px;
+    width: 10px;
+    height: 10px;
+    line-height: 10px;
+}
+
+
+#custom-functions-helptext, #company-information-helptext, #custom-fields-helptext,#auth-integration-helptext,#expire-in-days-helptext,#attachments-helptext,#notes-helptext,#others-helptext,#related-helptext,#background-helptext,#product-helptext,#other-information-helptext,#properties-helptext,#status-helptext{
+    margin-left: 5px;
+    position: inherit;
+    left: 0px;
+    margin-top: 2px;
+}
+.modal2{
+    z-index: 10002;
+}

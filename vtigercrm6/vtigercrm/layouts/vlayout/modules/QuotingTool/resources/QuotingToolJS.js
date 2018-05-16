@@ -216,6 +216,7 @@ jQuery.Class("QuotingToolJS", {}, {
                             // }
                         }
                     }
+
                 }
                 else {
                     var actionParams = {
@@ -455,6 +456,58 @@ jQuery.Class("QuotingToolJS", {}, {
         }
     },
 
+
+    IconHelpText: function () {
+        var module = app.getModuleName();
+        var html = '<div class="modal modal2 fade" style="display: none;" aria-hidden="false" id="modal2" data-backdrop="static" data-keyboard="false">'
+            + '<div class="modal-dialog modal-lg">'
+            + '<div class="modal-content">'
+            + '<div class="modal-header">'
+            + '<div class="clearfix">'
+            + '<div class="pull-right">'
+            + '<button type="button" class="close" aria-label="Close" id="btnModal2">'
+            + '<span aria-hidden="true" class="fa fa-close"></span>'
+            + '</button>'
+            + '</div>'
+
+            + '</div>'
+            + '</div>'
+            + '<div class="modal-body" style="overflow-y: auto;">';
+
+        + '</div>'
+        + '</div>'
+        + '</div>'
+        + '</div>';
+        // Append Modal2 to Body of Website
+        jQuery("body").append(html);
+
+
+        //Get Data From Input
+        if(module=='QuotingTool') {
+            var dataHelptext = jQuery('input[name="icon_helptext"]').val();
+            dataHelptext = JSON.parse(dataHelptext);
+        }
+        //Click Modal Icon_HelpText
+        jQuery(document).on('click','.icon-helptext',function(e) {
+            var id_helptext = jQuery(this).attr("id");
+
+            for(var i=0;i<dataHelptext.length;i++){
+                if(dataHelptext[i].element==id_helptext){
+                    templates = dataHelptext[i].helptext;
+                    break;
+                }
+                else{
+                    templates = "No data";
+                }
+            }
+
+            jQuery(".modal2 .modal-body").append('<h5 id="templates">'+templates+'</h5>');
+            jQuery("#modal2").modal('show');
+
+        });
+
+
+    },
     /**
      * Fn - showWidgetModal
      * @param templates
@@ -482,6 +535,7 @@ jQuery.Class("QuotingToolJS", {}, {
             var isCreateNewRecord = '';
             for (var i = 0; i < templates.length; i++) {
                 template = templates[i];
+
                 var moduleTemplate = template.modulename;
                 if(template.createnewrecords == 1 && currentModule != moduleTemplate) {
                      isCreateNewRecord = 1;
@@ -529,10 +583,12 @@ jQuery.Class("QuotingToolJS", {}, {
         thisInstance.registerWidgetActions();
         thisInstance.registerWidgetButtons();
         thisInstance.regiterWidgetOption();
+        thisInstance.IconHelpText();
     }
 });
 
 jQuery(document).ready(function () {
+    var module = app.getModuleName();
     // Fix auto add resizeable to textarea on IE
     if (jQuery.isFunction(jQuery.fn.resizable)) {
         jQuery('#quoting_tool-body').find("textarea.hide")
@@ -543,4 +599,23 @@ jQuery(document).ready(function () {
     var instance = new QuotingToolJS();
     instance.detailViewButtoncontainer = jQuery('.detailViewButtoncontainer');
     instance.registerEvents();
+
+    // Icon_HelpText
+    if(module=='QuotingTool') {
+        var dataHelptext = jQuery('input[name="icon_helptext"]').val();
+        dataHelptext = JSON.parse(dataHelptext);
+        if (dataHelptext.length > 0) {
+            setInterval(function () {
+                jQuery("span.icon-helptext").removeClass("hide");
+                //clearInterval();
+            }, 1000);
+        }
+
+        jQuery("#btnModal2").on('click', function () {
+            var element = document.getElementById("templates");
+            element.parentNode.removeChild(element);
+            jQuery(".modal2.in").modal('hide');
+        });
+        // End of Icon_HelpText
+    }
 });

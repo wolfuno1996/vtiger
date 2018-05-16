@@ -41,23 +41,12 @@ Vtiger.Class("QuotingTool", {}, {
         });
     },
 
-    breakLineEvents:function () {
-
-        setTimeout(function () {
-            //document.getElementById("breakline-related").innerHTML = "Related " + "\n" + "module";
-           // document.getElementById("breakline-pricing").innerHTML = "Pricing " + "\n" + "table";
-
-            //document.getElementById("breakline-pricing-idc").innerHTML = "Pricing " + "\n" + "table (IDC)";
-        },8000);
-
-    },
     /**
      * Fn - registerEvents
      */
     registerEvents: function () {
         var thisInstance = this;
         thisInstance.registerInstallEvents();
-        //thisInstance.breakLineEvents();
     }
 });
 

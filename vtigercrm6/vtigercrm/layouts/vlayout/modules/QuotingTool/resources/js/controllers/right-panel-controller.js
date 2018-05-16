@@ -24,6 +24,24 @@
                         }
                     }
                 })
+                .state('base.accept', {
+                    url: 'accept',
+                    views: {
+                        'right_panel_tool_items@': {
+                            templateUrl: 'layouts/vlayout/modules/QuotingTool/resources/js/views/right_panel/accept.html',
+                            controller: 'CtrlAppRightPanelGeneral'
+                        }
+                    }
+                })
+                .state('base.background', {
+                    url: 'background',
+                    views: {
+                        'right_panel_tool_items@': {
+                            templateUrl: 'layouts/vlayout/modules/QuotingTool/resources/js/views/right_panel/background.html',
+                            controller: 'CtrlAppRightPanelGeneral'
+                        }
+                    }
+                })
                 .state('base.history', {
                     url: 'history',
                     views: {
@@ -69,6 +87,47 @@
                         $rootScope.registerEventFocusInput(html);
                     }, $scope.emailTemplate.css);
                 });
+            };
+
+            $scope.showIconHelpText = function (id) {
+                var html = '<div class="modal modal2 fade" style="display: none;" aria-hidden="false" id="modal2" data-backdrop="static" data-keyboard="false">'
+                    + '<div class="modal-dialog modal-lg">'
+                    + '<div class="modal-content">'
+                    + '<div class="modal-header">'
+                    + '<div class="clearfix">'
+                    + '<div class="pull-right">'
+                    + '<button type="button" class="close" aria-label="Close" id="btnModal2">'
+                    + '<span aria-hidden="true" class="fa fa-close"></span>'
+                    + '</button>'
+                    + '</div>'
+                    + '</div>'
+                    + '</div>'
+                    + '<div class="modal-body" style="overflow-y: auto;">';
+                + '</div>'
+                + '</div>'
+                + '</div>'
+                + '</div>';
+                // Append Modal2 to Body of Website
+                jQuery("body").append(html);
+
+                var thisInstance = this;
+                //Get Data From Input
+                var dataHelptext = jQuery('input[name="icon_helptext"]').val();
+                dataHelptext = JSON.parse(dataHelptext);
+                //Click Modal Icon_HelpText
+
+                console.log(id);
+                for(var i=0;i<dataHelptext.length;i++){
+                    if(dataHelptext[i].element==id){
+                        var  templates = dataHelptext[i].helptext;
+                        break;
+                    }
+                    else{
+                        templates = "No data";
+                    }
+                }
+                jQuery(".modal2 .modal-body").append('<h5 id="templates">'+templates+'</h5>');
+                jQuery("#modal2").modal('show');
             };
 
             $scope.saveEmailTemplate = function () {

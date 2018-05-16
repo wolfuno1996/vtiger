@@ -1,0 +1,109 @@
+<style>
+    .quoting_tool-tool-items-main .tooltip-inner{
+        text-align: left;
+    }
+</style>
+<div id="layout-tokensTemplate">
+    <div class="block-section quoting_tool-block-section-container"
+         ng-class="{'block-section--expanded': sectionVisible && blockSectionId == SECTIONS.GENERAL_ACCEPT, 'block-section__disabled': sectionDisabled}"
+         data-section-id="{{SECTIONS.GENERAL_ACCEPT}}">
+
+        <!-- Head -->
+        <div class="block-section__hd clearfix prevent-selection" style="position: relative; cursor: default;">
+            <!-- Arrow -->
+            <div class="block-section__toggle" ng-click="toggleSection($event)">
+                <i class="icon icon--arrow-expand"></i>
+            </div>
+
+            <!-- Title -->
+            <h4 class="block-section__name pull-left ellipsis quoting_tool-allow-change-label"
+                contenteditable="false"
+                ng-click="toggleSection($event)">
+                {{app.model.settings.label_accept}}
+            </h4>
+
+            <!--Change label-->
+            <div title="{{ 'Change label' | translate }}" class="quoting_tool-pencil-change-label"
+                 ng-click="changeAcceptDeclineLabel($event, 'label_accept')">
+                <i class="fa fa-pencil"></i>
+            </div>
+        </div>
+
+        <!-- Content -->
+        <div class="block-section__bd anim--fadein clearfix"
+             ng-class="{'block-section__bd--open': sectionVisible && blockSectionId == SECTIONS.GENERAL_ACCEPT}">
+
+            <div>
+                <!--Accept-->
+                <div>
+                    <div class="doctool-subhead m--bottom-sm">
+                        <span>{{app.data.selectedModule.label}}:</span>
+                        <span>[{{ 'Field' | translate }}] - [{{ 'Value' | translate }}]</span>
+                    </div>
+
+                    <div id="quoting_tool-accept-fields" class="quoting_tool-accept-decline-fields"></div>
+
+                    <div class="m--bottom">
+                        <button class="btn btn-primary"
+                                ng-click="addFieldTokenMapping($event)">{{ 'Add' | translate }}
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="block-section quoting_tool-block-section-container"
+         ng-class="{'block-section--expanded': sectionVisible && blockSectionId == SECTIONS.GENERAL_DECLINE, 'block-section__disabled': sectionDisabled}"
+         data-section-id="{{SECTIONS.GENERAL_DECLINE}}">
+
+        <!-- Head -->
+        <div class="block-section__hd clearfix prevent-selection">
+            <!-- Arrow -->
+            <div class="block-section__toggle" ng-click="toggleSection($event)">
+                <i class="icon icon--arrow-expand"></i>
+            </div>
+
+            <!-- Title -->
+            <h4 class="block-section__name pull-left ellipsis quoting_tool-allow-change-label"
+                contenteditable="false"
+                ng-click="toggleSection($event)">
+                {{app.model.settings.label_decline}}
+            </h4>
+
+            <!--Change label-->
+            <div title="{{ 'Change label' | translate }}" class="quoting_tool-pencil-change-label"
+                 ng-click="changeAcceptDeclineLabel($event, 'label_decline')">
+                <i class="fa fa-pencil"></i>
+            </div>
+        </div>
+
+        <!-- Content -->
+        <div class="block-section__bd anim--fadein clearfix"
+             ng-class="{'block-section__bd--open': sectionVisible && blockSectionId == SECTIONS.GENERAL_DECLINE}">
+
+            <div>
+                <!--Decline-->
+                <div>
+                    <div class="doctool-subhead m--bottom-sm">
+                        <span>{{app.data.selectedModule.label}}:</span>
+                        <span>[{{ 'Field' | translate }}] - [{{ 'Value' | translate }}]</span>
+                    </div>
+
+                    <div id="quoting_tool-decline-fields" class="quoting_tool-accept-decline-fields"></div>
+
+                    <div class="m--bottom">
+                        <button class="btn btn-primary"
+                                ng-click="addFieldTokenMapping($event)">{{ 'Add' | translate }}
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    $(function () {
+        $('[data-toggle="tooltip"]').tooltip()
+    })
+</script>

@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.7, created on 2018-04-10 08:24:56
+<?php /* Smarty version Smarty-3.1.7, created on 2018-05-03 02:27:09
          compiled from "C:\vTiger\vtigercrm6\vtigercrm\includes\runtime/../../layouts/vlayout\modules\QuotingTool\EditView.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:97315acc74d841cba8-18377527%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'b59ebf338f5262934931a0a4ef1104df469c51fd' => 
     array (
       0 => 'C:\\vTiger\\vtigercrm6\\vtigercrm\\includes\\runtime/../../layouts/vlayout\\modules\\QuotingTool\\EditView.tpl',
-      1 => 1522896050,
+      1 => 1525313866,
       2 => 'file',
     ),
   ),
@@ -15,6 +15,8 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   'function' => 
   array (
   ),
+  'version' => 'Smarty-3.1.7',
+  'unifunc' => 'content_5acc74d899516',
   'variables' => 
   array (
     'USER_PROFILE' => 0,
@@ -23,6 +25,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'CUSTOM_FUNCTIONS' => 0,
     'CUSTOM_FIELDS' => 0,
     'COMPANY_FIELDS' => 0,
+    'ICON_HELPTEXT' => 0,
     'QUOTER_SETTINGS' => 0,
     'RECORD_ID' => 0,
     'MODULE' => 0,
@@ -30,8 +33,6 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'SETTINGS' => 0,
   ),
   'has_nocache_code' => false,
-  'version' => 'Smarty-3.1.7',
-  'unifunc' => 'content_5acc74d899516',
 ),false); /*/%%SmartyHeaderCode%%*/?>
 <?php if ($_valid && !is_callable('content_5acc74d899516')) {function content_5acc74d899516($_smarty_tpl) {?>
 <div class="editViewContainer container-fluid" ng-app="app" id="quoting_tool-app"><div id="js_currentUser" class="hide noprint"><?php echo Zend_Json::encode($_smarty_tpl->tpl_vars['USER_PROFILE']->value);?>
@@ -40,7 +41,8 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 </div><div id="js_custom_functions" class="hide noprint"><?php echo Zend_Json::encode($_smarty_tpl->tpl_vars['CUSTOM_FUNCTIONS']->value);?>
 </div><div id="js_custom_fields" class="hide noprint"><?php echo Zend_Json::encode($_smarty_tpl->tpl_vars['CUSTOM_FIELDS']->value);?>
 </div><div id="js_company_fields" class="hide noprint"><?php echo Zend_Json::encode($_smarty_tpl->tpl_vars['COMPANY_FIELDS']->value);?>
-</div><?php if ((isset($_smarty_tpl->tpl_vars['QUOTER_SETTINGS']->value))){?><div id="js_quoter_settings" class="hide noprint"><?php echo Zend_Json::encode($_smarty_tpl->tpl_vars['QUOTER_SETTINGS']->value);?>
+</div><input type="hidden" value='<?php echo Zend_Json::encode($_smarty_tpl->tpl_vars['ICON_HELPTEXT']->value);?>
+' name="icon_helptext"/><?php if ((isset($_smarty_tpl->tpl_vars['QUOTER_SETTINGS']->value))){?><div id="js_quoter_settings" class="hide noprint"><?php echo Zend_Json::encode($_smarty_tpl->tpl_vars['QUOTER_SETTINGS']->value);?>
 </div><?php }?><div id="quoting_tool-body" ng-controller="CtrlApp"><form action="index.php" id="EditView" name="EditView" method="post" enctype="multipart/form-data"><input type="hidden" name="action" value="Save"/><input type="hidden" name="record" value="<?php echo $_smarty_tpl->tpl_vars['RECORD_ID']->value;?>
 "/><input type="hidden" name="module" value="<?php echo $_smarty_tpl->tpl_vars['MODULE']->value;?>
 "/><input type="hidden" name="primary_module" value="<?php ob_start();?><?php echo $_smarty_tpl->tpl_vars['TEMPLATE']->value ? $_smarty_tpl->tpl_vars['TEMPLATE']->value->get('module') : '';?>

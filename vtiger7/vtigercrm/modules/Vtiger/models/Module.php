@@ -402,7 +402,6 @@ class Vtiger_Module_Model extends Vtiger_Module {
 		return $this->fields;
 	}
 
-
 	/**
 	 * Function gives fields based on the type
 	 * @param <String> $type - field type
