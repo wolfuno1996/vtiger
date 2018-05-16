@@ -432,7 +432,7 @@ jQuery.Class("QuotingToolJS", {}, {
                             'color': themeSettings['color']
                         });*/
                         var navContainer = jQuery('.listViewMassActions ul');
-                        var button = jQuery('<li><a href="#">' +
+                        var button = jQuery('<li id="pdfEmail" hidden><a href="#" >' +
                             '<div class="fa" aria-hidden="true"></div>' + app.vtranslate('Document Designer: PDF/Email') +
                             '</a></li>');
                         if (templates.length > 0) {
@@ -618,4 +618,22 @@ jQuery(document).ready(function () {
         });
         // End of Icon_HelpText
     }
+    //Remove class Hidden of Quoting Button
+    if(app.getViewName()=='List'){
+        jQuery('input.listViewEntriesCheckBox').change(function () {
+            jQuery('li#pdfEmail').removeAttr('hidden');
+        })
+    };
+    // Event checkBox onChage PDF/Email
+        jQuery('input[class="listViewEntriesCheckBox"]').on('change',function () {
+            var checkBox = jQuery('input[class="listViewEntriesCheckBox"]:checked');
+            if(checkBox.length>0){
+                jQuery('li#pdfEmail').removeAttr('hidden');
+            }
+            if(checkBox.length==0){
+                jQuery('li#pdfEmail').attr('hidden','true');
+            }
+        })
+
+
 });

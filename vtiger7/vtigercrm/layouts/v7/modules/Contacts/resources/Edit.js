@@ -186,11 +186,30 @@ Vtiger_Edit_Js("Contacts_Edit_Js",{},{
 		});
 
 	},
+	// Tạo event hide block
+	eventHideBlockCustomer: function (container) {
+        jQuery("select[name='leadsource']").on('change',function () { // Sự kiện khi thay đổi thẻ select
+			leadSource = this.value; // Biến nhận đc khi thay đổi thẻ select
+            if(app.getModuleName()=="Contacts" && app.getViewName()=="Edit") { // Kiểm tra khi ở module Contacts và View là Edit thì sẽ chạy đoạn code dưới
+                if (leadSource == "Cold Call") { // Khi biến nhận đc là Cold Call
+                    // Tìm thẻ h4 chứa đoạn html là Customer Portal Details rồi gán thẻ parent cho nó rồi thêm class ẩn vào cho nó
+                    jQuery("h4.fieldBlockHeader:contains('Customer Portal Details')").parent().addClass('hidden');
 
+                }
+
+                else {
+
+                    jQuery("h4.fieldBlockHeader:contains('Customer Portal Details')").parent().removeClass('hidden');
+                }
+            }
+        });
+    },
 	registerBasicEvents: function (container) {
 		this._super(container);
 		this.registerEventForCopyingAddress(container);
 		this.registerRecordPreSaveEvent(container);
 		this.registerReferenceSelectionEvent(container);
+		// Đăng ký event ở đây
+		this.eventHideBlockCustomer(container) ;
 	}
 })

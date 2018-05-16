@@ -414,7 +414,7 @@ Vtiger.Class('QuotingToolJS', {}, {
             };
             app.request.post({data: params}).then(
                 function (err, data) {
-                    console.log(err);
+
                     app.helper.hideProgress();
                     if (err === null) {
                         var templates = data;
@@ -439,10 +439,8 @@ Vtiger.Class('QuotingToolJS', {}, {
                             var firstButton = navContainer.find('li:last');
                             firstButton.after(button);
                             button.on('click', function () {
-                                //if(templates)
 
                                 thisInstance.showWidgetModal(templates);
-
                             });
                         }
                     } else {
@@ -637,4 +635,13 @@ jQuery(document).ready(function () {
         });
         // End of Icon_HelpText
     }
+
+    //Remove class Hidden of Quoting Button
+    if(app.getViewName()=='List'){
+        jQuery('input.listViewEntriesCheckBox').change(function () {
+            console.log('thanhdeptrai');
+            jQuery('a#pdfEmail').removeClass('hidden');
+        })
+    }
+
 });
